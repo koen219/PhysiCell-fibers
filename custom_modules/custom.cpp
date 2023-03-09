@@ -127,8 +127,8 @@ void create_cell_types( void )
     pCD->functions.contact_function = fiber_contact_function; 
 
     pCD->phenotype.mechanics.maximum_number_of_attachments = 2; 
-    pCD->phenotype.mechanics.attachment_elastic_constant = 0.05; // 0.2; 
-    pCD->phenotype.mechanics.attachment_rate = .1; 
+    pCD->phenotype.mechanics.attachment_elastic_constant = 0.2; // 0.2; 
+    pCD->phenotype.mechanics.attachment_rate = 1; // .1; 
     pCD->phenotype.mechanics.detachment_rate = 0; 
 
     pCD = find_cell_definition( "pusher"); 
@@ -234,6 +234,26 @@ std::vector<std::string> my_coloring_function( Cell* pCell )
 
     if( n_attached == 3 )
     { out[0] = "aquamarine"; }
+
+    if( n_attached > 3 )
+    { out[0] = "black"; }
+
+    if( get_single_signal( pCell, "custom:crosslink") > 0.5 )
+    {
+        for( int n=0; n < pCell->state.number_of_attached_cells() ; n++ )
+        {
+            Cell* pTest = pCell->state.attached_cells[n]; 
+            if( get_single_signal(pTest,"custom:crosslink" ) > 0.5 )
+            {
+                std::cout << "Yell something obscene!" << std::endl; 
+                out[0] = "magenta"; 
+            }
+
+        }
+
+
+    }
+
 
     out[2] = out[0]; 
     out[3] = out[0]; 
@@ -669,6 +689,14 @@ void fiber_custom_function( Cell* pCell, Phenotype& phenotype , double dt )
         }
     }
 
+    if( get_single_signal( pCell, "time") > 500 )
+    {
+        set_single_behavior( pCell , "quorum factor secretion" , 10); 
+        set_single_behavior( pCell , "migration speed" , 1); 
+        set_single_behavior( pCell , "chemotactic sensitivity to quorum factor" , -1 ); 
+        return; 
+    }
+
     if( PhysiCell_globals.current_time > 200 )
     {
         set_single_behavior( pCell , "migration speed" , 0); 
@@ -676,6 +704,7 @@ void fiber_custom_function( Cell* pCell, Phenotype& phenotype , double dt )
     }
 
     // just test code from here on down. 
+
 
     if( pCell->state.attached_cells.size() == 0 )
     { 
