@@ -376,14 +376,36 @@ def getAngularHarmonicForce_Monasse(A, B, C, k, theta0):
 
 // std::vector<Point> getAngularHarmonicForce_Monasse(Point A, Point B, Point C, double k, double theta0); 
 
-/* This is from ... */
+/* Force calculation based on:
+	Monasse, Bernard, and Frédéric Boussinot. 
+    "Determination of forces from a potential in molecular dynamics." 
+    arXiv preprint arXiv:1401.1181 (2014).
+
+
+    Returns the angular harmonic forces (F_a, F_b, F_c) in the bond
+    A--B--C
+    - A, B, and C are lists with coordinates of the points.
+    - k is the spring constant.
+    - theta0 the rest length of the bond in radians.
+    The forces on A, B, and C are calculated as:
+    
+    F_a = k*(theta - theta0) * p_a
+    
+    F_c = k*(theta - theta0) * p_c
+    
+    F_b = -F_a - F_c
+    
+    - p_a is a unit vector in the ABC plane orthogonal to (BA)
+    - p_c is a unit vector in the ABC plane orthogonal to (CB)
+    - theta is the angle ABC in radians
+*/
 std::vector< std::vector<double> > compute_angular_force_contributions( Cell* pCell , Phenotype& phenotype , double dt )
 {
     if( pCell->state.number_of_attached_cells() < 2 )
     { std::cout << "bad move genius" << std::endl; exit(-1); }
 
     double theta0 = get_single_signal( pCell , "custom:preferred_angle" ); 
-    double k = get_single_base_behavior( pCell , "custom:angular_spring_constant" ); 
+    double k = get_single_signal( pCell , "custom:angular_spring_constant" ); 
     
     Cell* pLeft = pCell->state.attached_cells[0];
     Cell* pMiddle = pCell; 
@@ -393,17 +415,26 @@ std::vector< std::vector<double> > compute_angular_force_contributions( Cell* pC
     std::vector<double> B = pMiddle->position;  
     std::vector<double> C = pRight->position;  
 
+//    std::cout << A << " " << B << " " << C << std::endl; 
+ //   std::cout << theta0 << " " << k << std::endl; 
+
     std::vector<double> BA = B-A; 
-    std::vector<double> BC = C-B;
+    std::vector<double> BC = B-C;
     std::vector<double> CB = C-B; 
 
     double BA_mag = norm(BA); 
     double BC_mag = norm(BC);
 
-//  If BA and BC are colinear, take an arbitrary orthogonal vector
-    // https://math.stackexchange.com/q/3077100
+//    std::cout << BA << " " << BC << " " << CB <<  " " << BA_mag << " " << BC_mag << std::endl; 
+
     std::vector<double> BA_cross_BC = BioFVM::cross_product( BA, BC );
+
+//    std::cout << BA_cross_BC << std::endl; 
+
     std::vector<double> p_a, p_b, p_c;
+
+	// If BA and BC are colinear (cross product is 0 vector), 
+	// take an arbitrary orthogonal vector (see: https://math.stackexchange.com/q/3077100)
     if ( not (norm(BA_cross_BC) > 0)){
         std::vector<double> orthogonal_vector = {
             BA[1] + BA[2],
@@ -422,13 +453,21 @@ std::vector< std::vector<double> > compute_angular_force_contributions( Cell* pC
         p_c = (1 / norm(p_c) ) * p_c ;
     }
 
-    // rounding is necessary to avoid numerical errors 
+    // Capping the value is necessary to avoid numerical errors 
     // when vectors are colinear the argument can be = 1.0000000000000002
-    // which is outside of the range of np.arccos, defined for [-1, 1]
-    double costheta = BioFVM::dot_product(BA,BC) / BA_mag * BC_mag;
-    double theta = acos(round(costheta));
+    // which is outside of the range of acos, defined for [-1, 1]
+    double costheta = BioFVM::dot_product(BA,BC) / ( BA_mag * BC_mag );
+    if( costheta > 1 )
+    { costheta = 1; }
+    if( costheta < -1 )
+    { costheta = -1; }
+
+    double theta = acos(costheta); 
 
     double delta_theta = k*(theta - theta0);
+ //   std::cout << p_a << " " << p_c << std::endl; 
+ //   std::cout << costheta << " " << theta << " " << delta_theta << std::endl; 
+
 
     std::vector<double> F_a = (delta_theta/BA_mag) * p_a  ;
     std::vector<double> F_c = (delta_theta/BC_mag) * p_c ;
@@ -502,6 +541,12 @@ void fiber_custom_function( Cell* pCell, Phenotype& phenotype , double dt )
             pLeft->velocity += forces[0]; 
             pRight->velocity += forces[2]; 
         }
+    }
+
+    if( PhysiCell_globals.current_time > 200 )
+    {
+        set_single_behavior( pCell , "migration speed" , 0); 
+        return; 
     }
 
     // just test code from here on down. 
