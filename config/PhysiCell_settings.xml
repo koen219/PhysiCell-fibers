@@ -127,7 +127,7 @@
                 </volume>
                 <mechanics>
                     <cell_cell_adhesion_strength units="micron/min">0.4</cell_cell_adhesion_strength>
-                    <cell_cell_repulsion_strength units="micron/min">10.0</cell_cell_repulsion_strength>
+                    <cell_cell_repulsion_strength units="micron/min">50.0</cell_cell_repulsion_strength>
                     <relative_maximum_adhesion_distance units="dimensionless">1.25</relative_maximum_adhesion_distance>
                     <cell_adhesion_affinities>
                         <cell_adhesion_affinity name="ECM">1</cell_adhesion_affinity>
@@ -206,7 +206,7 @@
                 <crosslink_detachment_rate conserved="false" units="" description="">0.0</crosslink_detachment_rate>
                 <crosslink_angular_spring_constant conserved="false" units="" description="">10</crosslink_angular_spring_constant>
                 <crosslink_preferred_angle conserved="false" units="" description="">1.57</crosslink_preferred_angle>
-                <crosslink_spring_constant conserved="false" units="" description="">0.1</crosslink_spring_constant>
+                <crosslink_spring_constant conserved="false" units="" description="">0.2</crosslink_spring_constant>
                 <crosslink conserved="false" units="" description="">0.0</crosslink>
             </custom_data>
         </cell_definition>

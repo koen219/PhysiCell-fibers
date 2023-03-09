@@ -5039,3 +5039,1013 @@ DEBUG:root:--------- found //user_parameters
 DEBUG:root:random_seed
 DEBUG:root:number_of_cells
 DEBUG:root:found 2
+DEBUG:root:===========  run_model_cb():  ============
+DEBUG:root:run_tab.py:  doing: mkdir output
+DEBUG:root:
+ ========================== run_tab.py: update_xml_from_gui(): self.xml_root = <Element 'PhysiCell_settings' at 0x15e20c7c0>
+DEBUG:root:----------- microenv_tab.py: fill_xml(): ----------
+DEBUG:root:microenv_tab.py: fill_xml(): num subtrates = 1
+DEBUG:root:substrates_in_tree =['quorum factor']
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = substrate
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = gradients
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = track_in_agents
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = quorum factor
+DEBUG:root:matched! quorum factor
+DEBUG:root:
+
+----------- cell_def_tab.py: fill_xml(): ----------
+DEBUG:root:num cell defs = 2
+DEBUG:root:cdefs_in_tree =['ECM', 'pusher']
+DEBUG:root:
+--- key in param_d.keys() = ECM
+DEBUG:root:matched! ECM
+DEBUG:root:--- cell_adhesion_affinity= {'ECM': '1', 'pusher': '0'}
+DEBUG:root:ECM  --> 1
+DEBUG:root:pusher  --> 0
+DEBUG:root:
+
+ ====================> fill_xml_motility(): quorum factor = quorum factor 
+
+
+DEBUG:root:fill_xml_motility(): {'quorum factor': '1'}
+DEBUG:root:quorum factor  --> 1
+DEBUG:root:self.substrate_list = ['quorum factor']
+DEBUG:root:substrate = quorum factor
+DEBUG:root:------------------- fill_xml_interactions():  cdef= ECM
+DEBUG:root:--- live_phagocytosis_rate= {'ECM': '0', 'default': '0', 'pusher': '0.0', '': '0.0'}
+DEBUG:root:  key in live_phagocytosis_rate= ECM
+DEBUG:root:ECM  --> 0
+DEBUG:root:  key in live_phagocytosis_rate= default
+DEBUG:root:default  --> 0
+DEBUG:root:  key in live_phagocytosis_rate= pusher
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:  key in live_phagocytosis_rate= 
+DEBUG:root:--- attack_rate= {'ECM': '0', 'default': '0', 'pusher': '0.0', '': '0.0'}
+DEBUG:root:ECM  --> 0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:--- fusion_rate= {'ECM': '0', 'default': '0', 'pusher': '0.0', '': '0.0'}
+DEBUG:root:ECM  --> 0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:ECM  --> 0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:------------------- fill_xml_intracellular()
+DEBUG:root:------ ["intracellular"]: for ECM
+DEBUG:root:None
+DEBUG:root:
+
+DEBUG:root:------ ["custom_data"]: for ECM
+DEBUG:root:
+
+DEBUG:root:
+--- key in param_d.keys() = pusher
+DEBUG:root:matched! pusher
+DEBUG:root:--- cell_adhesion_affinity= {'ECM': '0.0', 'pusher': '1.0'}
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:pusher  --> 1.0
+DEBUG:root:
+
+ ====================> fill_xml_motility(): quorum factor = quorum factor 
+
+
+DEBUG:root:fill_xml_motility(): {'quorum factor': '0.0'}
+DEBUG:root:quorum factor  --> 0.0
+DEBUG:root:self.substrate_list = ['quorum factor']
+DEBUG:root:substrate = quorum factor
+DEBUG:root:------------------- fill_xml_interactions():  cdef= pusher
+DEBUG:root:--- live_phagocytosis_rate= {'ECM': '0.0', 'default': '0', 'pusher': '0.0'}
+DEBUG:root:  key in live_phagocytosis_rate= ECM
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:  key in live_phagocytosis_rate= default
+DEBUG:root:default  --> 0
+DEBUG:root:  key in live_phagocytosis_rate= pusher
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:--- attack_rate= {'ECM': '0.0', 'default': '0', 'pusher': '0.0'}
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:--- fusion_rate= {'ECM': '0.0', 'default': '0', 'pusher': '0.0'}
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:default  --> 0
+DEBUG:root:------------------- fill_xml_intracellular()
+DEBUG:root:------ ["intracellular"]: for pusher
+DEBUG:root:None
+DEBUG:root:
+
+DEBUG:root:------ ["custom_data"]: for pusher
+DEBUG:root:
+
+DEBUG:root:----------- end cell_def_tab.py: fill_xml(): ----------
+DEBUG:root:
+--------- user_params_tab.py:  fill_xml(): self.count = 125
+DEBUG:root:--------- found //user_parameters
+DEBUG:root:random_seed
+DEBUG:root:number_of_cells
+DEBUG:root:found 2
+DEBUG:root:
+  ---- apoptosis_phase_transition_cb: 
+DEBUG:root:apoptosis_phase_transition_cb: NOT duration
+DEBUG:root:
+  ---- apoptosis_phase_transition_cb: 
+DEBUG:root:apoptosis: ------>> duration
+DEBUG:root:apoptosis_phase_transition_cb: --> duration
+DEBUG:root:
+  ---- necrosis_phase_transition_cb: 
+DEBUG:root:necrosis_phase_transition_cb: NOT duration
+DEBUG:root:
+  ---- necrosis_phase_transition_cb: 
+DEBUG:root:necrosis: ------>>duration
+DEBUG:root:necrosis_phase_transition_cb: --> duration
+DEBUG:root:key 0= ECM
+DEBUG:root:keys 1= dict_keys(['ECM', 'pusher'])
+DEBUG:root:keys 2= dict_keys(['ECM', 'pusher'])
+DEBUG:root:
+----- update_motility_params():  cdname= ECM
+DEBUG:root:     setting motility_substrate_dropdown (for cdname= ECM ) = quorum factor
+DEBUG:root:     setting motility2_substrate_dropdown (for cdname= ECM ) = quorum factor
+DEBUG:root:    chemotactic_sensitivity= {'quorum factor': '1'}
+DEBUG:root:new val = 1
+DEBUG:root:----- chemo_sensitivity_changed() = 1
+DEBUG:root:----- chemo_sensitivity_changed(): subname = quorum factor
+DEBUG:root:     chemotactic_sensitivity (dict)= {'quorum factor': '1'}
+DEBUG:root:----- leave update_motility_params()
+
+DEBUG:root:update_secretion_params(): cdname = ECM
+DEBUG:root:update_secretion_params(): self.current_secretion_substrate = quorum factor
+DEBUG:root:{'quorum factor': {'secretion_rate': '0', 'secretion_target': '1', 'uptake_rate': '0', 'net_export_rate': '0'}}
+DEBUG:root:----------- microenv_tab.py: fill_xml(): ----------
+DEBUG:root:microenv_tab.py: fill_xml(): num subtrates = 1
+DEBUG:root:substrates_in_tree =['quorum factor']
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = substrate
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = gradients
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = track_in_agents
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = quorum factor
+DEBUG:root:matched! quorum factor
+DEBUG:root:
+
+----------- cell_def_tab.py: fill_xml(): ----------
+DEBUG:root:num cell defs = 2
+DEBUG:root:cdefs_in_tree =['ECM', 'pusher']
+DEBUG:root:
+--- key in param_d.keys() = ECM
+DEBUG:root:matched! ECM
+DEBUG:root:--- cell_adhesion_affinity= {'ECM': '1', 'pusher': '0'}
+DEBUG:root:ECM  --> 1
+DEBUG:root:pusher  --> 0
+DEBUG:root:
+
+ ====================> fill_xml_motility(): quorum factor = quorum factor 
+
+
+DEBUG:root:fill_xml_motility(): {'quorum factor': '1'}
+DEBUG:root:quorum factor  --> 1
+DEBUG:root:self.substrate_list = ['quorum factor']
+DEBUG:root:substrate = quorum factor
+DEBUG:root:------------------- fill_xml_interactions():  cdef= ECM
+DEBUG:root:--- live_phagocytosis_rate= {'ECM': '0', 'default': '0', 'pusher': '0.0', '': '0.0'}
+DEBUG:root:  key in live_phagocytosis_rate= ECM
+DEBUG:root:ECM  --> 0
+DEBUG:root:  key in live_phagocytosis_rate= default
+DEBUG:root:default  --> 0
+DEBUG:root:  key in live_phagocytosis_rate= pusher
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:  key in live_phagocytosis_rate= 
+DEBUG:root:--- attack_rate= {'ECM': '0', 'default': '0', 'pusher': '0.0', '': '0.0'}
+DEBUG:root:ECM  --> 0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:--- fusion_rate= {'ECM': '0', 'default': '0', 'pusher': '0.0', '': '0.0'}
+DEBUG:root:ECM  --> 0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:ECM  --> 0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:------------------- fill_xml_intracellular()
+DEBUG:root:------ ["intracellular"]: for ECM
+DEBUG:root:None
+DEBUG:root:
+
+DEBUG:root:------ ["custom_data"]: for ECM
+DEBUG:root:
+
+DEBUG:root:
+--- key in param_d.keys() = pusher
+DEBUG:root:matched! pusher
+DEBUG:root:--- cell_adhesion_affinity= {'ECM': '0.0', 'pusher': '1.0'}
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:pusher  --> 1.0
+DEBUG:root:
+
+ ====================> fill_xml_motility(): quorum factor = quorum factor 
+
+
+DEBUG:root:fill_xml_motility(): {'quorum factor': '0.0'}
+DEBUG:root:quorum factor  --> 0.0
+DEBUG:root:self.substrate_list = ['quorum factor']
+DEBUG:root:substrate = quorum factor
+DEBUG:root:------------------- fill_xml_interactions():  cdef= pusher
+DEBUG:root:--- live_phagocytosis_rate= {'ECM': '0.0', 'default': '0', 'pusher': '0.0'}
+DEBUG:root:  key in live_phagocytosis_rate= ECM
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:  key in live_phagocytosis_rate= default
+DEBUG:root:default  --> 0
+DEBUG:root:  key in live_phagocytosis_rate= pusher
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:--- attack_rate= {'ECM': '0.0', 'default': '0', 'pusher': '0.0'}
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:--- fusion_rate= {'ECM': '0.0', 'default': '0', 'pusher': '0.0'}
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:default  --> 0
+DEBUG:root:------------------- fill_xml_intracellular()
+DEBUG:root:------ ["intracellular"]: for pusher
+DEBUG:root:None
+DEBUG:root:
+
+DEBUG:root:------ ["custom_data"]: for pusher
+DEBUG:root:
+
+DEBUG:root:----------- end cell_def_tab.py: fill_xml(): ----------
+DEBUG:root:
+--------- user_params_tab.py:  fill_xml(): self.count = 125
+DEBUG:root:--------- found //user_parameters
+DEBUG:root:random_seed
+DEBUG:root:number_of_cells
+DEBUG:root:found 2
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_xmin,xmax=  (-500.0, 500.0)
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_ymin,ymax=  (-500.0, 500.0)
+DEBUG:root:ics_tab.py: volume= 2494.0, radius= 8.412710547954228
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_xmin,xmax=  (-500.0, 500.0)
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_ymin,ymax=  (-500.0, 500.0)
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_xmin,xmax=  (-500.0, 500.0)
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_ymin,ymax=  (-500.0, 500.0)
+DEBUG:root:ics_tab.py: volume= 2494.0, radius= 8.412710547954228
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_xmin,xmax=  (-500.0, 500.0)
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_ymin,ymax=  (-500.0, 500.0)
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_xmin,xmax=  (-500.0, 500.0)
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_ymin,ymax=  (-500.0, 500.0)
+DEBUG:root:ics_tab.py: volume= 2494.0, radius= 8.412710547954228
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_xmin,xmax=  (-500.0, 500.0)
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_ymin,ymax=  (-500.0, 500.0)
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_xmin,xmax=  (-500.0, 500.0)
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_ymin,ymax=  (-500.0, 500.0)
+DEBUG:root:ics_tab.py: volume= 2494.0, radius= 8.412710547954228
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_xmin,xmax=  (-500.0, 500.0)
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_ymin,ymax=  (-500.0, 500.0)
+DEBUG:root:ics_tab.py: volume= 2494.0, radius= 8.412710547954228
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_xmin,xmax=  (-500.0, 500.0)
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_ymin,ymax=  (-500.0, 500.0)
+DEBUG:root:ics_tab.py: volume= 2494.0, radius= 8.412710547954228
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_xmin,xmax=  (-500.0, 500.0)
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_ymin,ymax=  (-500.0, 500.0)
+DEBUG:root:ics_tab.py: volume= 2494.0, radius= 8.412710547954228
+DEBUG:root:===========  run_model_cb():  ============
+DEBUG:root:run_tab.py:  doing: mkdir output
+DEBUG:root:
+ ========================== run_tab.py: update_xml_from_gui(): self.xml_root = <Element 'PhysiCell_settings' at 0x15e20c7c0>
+DEBUG:root:----------- microenv_tab.py: fill_xml(): ----------
+DEBUG:root:microenv_tab.py: fill_xml(): num subtrates = 1
+DEBUG:root:substrates_in_tree =['quorum factor']
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = substrate
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = gradients
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = track_in_agents
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = quorum factor
+DEBUG:root:matched! quorum factor
+DEBUG:root:
+
+----------- cell_def_tab.py: fill_xml(): ----------
+DEBUG:root:num cell defs = 2
+DEBUG:root:cdefs_in_tree =['ECM', 'pusher']
+DEBUG:root:
+--- key in param_d.keys() = ECM
+DEBUG:root:matched! ECM
+DEBUG:root:--- cell_adhesion_affinity= {'ECM': '1', 'pusher': '0'}
+DEBUG:root:ECM  --> 1
+DEBUG:root:pusher  --> 0
+DEBUG:root:
+
+ ====================> fill_xml_motility(): quorum factor = quorum factor 
+
+
+DEBUG:root:fill_xml_motility(): {'quorum factor': '1'}
+DEBUG:root:quorum factor  --> 1
+DEBUG:root:self.substrate_list = ['quorum factor']
+DEBUG:root:substrate = quorum factor
+DEBUG:root:------------------- fill_xml_interactions():  cdef= ECM
+DEBUG:root:--- live_phagocytosis_rate= {'ECM': '0', 'default': '0', 'pusher': '0.0', '': '0.0'}
+DEBUG:root:  key in live_phagocytosis_rate= ECM
+DEBUG:root:ECM  --> 0
+DEBUG:root:  key in live_phagocytosis_rate= default
+DEBUG:root:default  --> 0
+DEBUG:root:  key in live_phagocytosis_rate= pusher
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:  key in live_phagocytosis_rate= 
+DEBUG:root:--- attack_rate= {'ECM': '0', 'default': '0', 'pusher': '0.0', '': '0.0'}
+DEBUG:root:ECM  --> 0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:--- fusion_rate= {'ECM': '0', 'default': '0', 'pusher': '0.0', '': '0.0'}
+DEBUG:root:ECM  --> 0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:ECM  --> 0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:------------------- fill_xml_intracellular()
+DEBUG:root:------ ["intracellular"]: for ECM
+DEBUG:root:None
+DEBUG:root:
+
+DEBUG:root:------ ["custom_data"]: for ECM
+DEBUG:root:
+
+DEBUG:root:
+--- key in param_d.keys() = pusher
+DEBUG:root:matched! pusher
+DEBUG:root:--- cell_adhesion_affinity= {'ECM': '0.0', 'pusher': '1.0'}
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:pusher  --> 1.0
+DEBUG:root:
+
+ ====================> fill_xml_motility(): quorum factor = quorum factor 
+
+
+DEBUG:root:fill_xml_motility(): {'quorum factor': '0.0'}
+DEBUG:root:quorum factor  --> 0.0
+DEBUG:root:self.substrate_list = ['quorum factor']
+DEBUG:root:substrate = quorum factor
+DEBUG:root:------------------- fill_xml_interactions():  cdef= pusher
+DEBUG:root:--- live_phagocytosis_rate= {'ECM': '0.0', 'default': '0', 'pusher': '0.0'}
+DEBUG:root:  key in live_phagocytosis_rate= ECM
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:  key in live_phagocytosis_rate= default
+DEBUG:root:default  --> 0
+DEBUG:root:  key in live_phagocytosis_rate= pusher
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:--- attack_rate= {'ECM': '0.0', 'default': '0', 'pusher': '0.0'}
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:--- fusion_rate= {'ECM': '0.0', 'default': '0', 'pusher': '0.0'}
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:default  --> 0
+DEBUG:root:------------------- fill_xml_intracellular()
+DEBUG:root:------ ["intracellular"]: for pusher
+DEBUG:root:None
+DEBUG:root:
+
+DEBUG:root:------ ["custom_data"]: for pusher
+DEBUG:root:
+
+DEBUG:root:----------- end cell_def_tab.py: fill_xml(): ----------
+DEBUG:root:
+--------- user_params_tab.py:  fill_xml(): self.count = 125
+DEBUG:root:--------- found //user_parameters
+DEBUG:root:random_seed
+DEBUG:root:number_of_cells
+DEBUG:root:found 2
+DEBUG:root:key 0= ECM
+DEBUG:root:keys 1= dict_keys(['ECM', 'pusher'])
+DEBUG:root:keys 2= dict_keys(['ECM', 'pusher'])
+DEBUG:root:
+----- update_motility_params():  cdname= ECM
+DEBUG:root:     setting motility_substrate_dropdown (for cdname= ECM ) = quorum factor
+DEBUG:root:     setting motility2_substrate_dropdown (for cdname= ECM ) = quorum factor
+DEBUG:root:    chemotactic_sensitivity= {'quorum factor': '1'}
+DEBUG:root:new val = 1
+DEBUG:root:----- leave update_motility_params()
+
+DEBUG:root:update_secretion_params(): cdname = ECM
+DEBUG:root:update_secretion_params(): self.current_secretion_substrate = quorum factor
+DEBUG:root:{'quorum factor': {'secretion_rate': '0', 'secretion_target': '1', 'uptake_rate': '0', 'net_export_rate': '0'}}
+DEBUG:root:----------- microenv_tab.py: fill_xml(): ----------
+DEBUG:root:microenv_tab.py: fill_xml(): num subtrates = 1
+DEBUG:root:substrates_in_tree =['quorum factor']
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = substrate
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = gradients
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = track_in_agents
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = quorum factor
+DEBUG:root:matched! quorum factor
+DEBUG:root:
+
+----------- cell_def_tab.py: fill_xml(): ----------
+DEBUG:root:num cell defs = 2
+DEBUG:root:cdefs_in_tree =['ECM', 'pusher']
+DEBUG:root:
+--- key in param_d.keys() = ECM
+DEBUG:root:matched! ECM
+DEBUG:root:--- cell_adhesion_affinity= {'ECM': '1', 'pusher': '0'}
+DEBUG:root:ECM  --> 1
+DEBUG:root:pusher  --> 0
+DEBUG:root:
+
+ ====================> fill_xml_motility(): quorum factor = quorum factor 
+
+
+DEBUG:root:fill_xml_motility(): {'quorum factor': '1'}
+DEBUG:root:quorum factor  --> 1
+DEBUG:root:self.substrate_list = ['quorum factor']
+DEBUG:root:substrate = quorum factor
+DEBUG:root:------------------- fill_xml_interactions():  cdef= ECM
+DEBUG:root:--- live_phagocytosis_rate= {'ECM': '0', 'default': '0', 'pusher': '0.0', '': '0.0'}
+DEBUG:root:  key in live_phagocytosis_rate= ECM
+DEBUG:root:ECM  --> 0
+DEBUG:root:  key in live_phagocytosis_rate= default
+DEBUG:root:default  --> 0
+DEBUG:root:  key in live_phagocytosis_rate= pusher
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:  key in live_phagocytosis_rate= 
+DEBUG:root:--- attack_rate= {'ECM': '0', 'default': '0', 'pusher': '0.0', '': '0.0'}
+DEBUG:root:ECM  --> 0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:--- fusion_rate= {'ECM': '0', 'default': '0', 'pusher': '0.0', '': '0.0'}
+DEBUG:root:ECM  --> 0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:ECM  --> 0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:------------------- fill_xml_intracellular()
+DEBUG:root:------ ["intracellular"]: for ECM
+DEBUG:root:None
+DEBUG:root:
+
+DEBUG:root:------ ["custom_data"]: for ECM
+DEBUG:root:
+
+DEBUG:root:
+--- key in param_d.keys() = pusher
+DEBUG:root:matched! pusher
+DEBUG:root:--- cell_adhesion_affinity= {'ECM': '0.0', 'pusher': '1.0'}
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:pusher  --> 1.0
+DEBUG:root:
+
+ ====================> fill_xml_motility(): quorum factor = quorum factor 
+
+
+DEBUG:root:fill_xml_motility(): {'quorum factor': '0.0'}
+DEBUG:root:quorum factor  --> 0.0
+DEBUG:root:self.substrate_list = ['quorum factor']
+DEBUG:root:substrate = quorum factor
+DEBUG:root:------------------- fill_xml_interactions():  cdef= pusher
+DEBUG:root:--- live_phagocytosis_rate= {'ECM': '0.0', 'default': '0', 'pusher': '0.0'}
+DEBUG:root:  key in live_phagocytosis_rate= ECM
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:  key in live_phagocytosis_rate= default
+DEBUG:root:default  --> 0
+DEBUG:root:  key in live_phagocytosis_rate= pusher
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:--- attack_rate= {'ECM': '0.0', 'default': '0', 'pusher': '0.0'}
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:--- fusion_rate= {'ECM': '0.0', 'default': '0', 'pusher': '0.0'}
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:default  --> 0
+DEBUG:root:------------------- fill_xml_intracellular()
+DEBUG:root:------ ["intracellular"]: for pusher
+DEBUG:root:None
+DEBUG:root:
+
+DEBUG:root:------ ["custom_data"]: for pusher
+DEBUG:root:
+
+DEBUG:root:----------- end cell_def_tab.py: fill_xml(): ----------
+DEBUG:root:
+--------- user_params_tab.py:  fill_xml(): self.count = 125
+DEBUG:root:--------- found //user_parameters
+DEBUG:root:random_seed
+DEBUG:root:number_of_cells
+DEBUG:root:found 2
+DEBUG:root:===========  run_model_cb():  ============
+DEBUG:root:run_tab.py:  doing: mkdir output
+DEBUG:root:
+ ========================== run_tab.py: update_xml_from_gui(): self.xml_root = <Element 'PhysiCell_settings' at 0x15e20c7c0>
+DEBUG:root:----------- microenv_tab.py: fill_xml(): ----------
+DEBUG:root:microenv_tab.py: fill_xml(): num subtrates = 1
+DEBUG:root:substrates_in_tree =['quorum factor']
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = substrate
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = gradients
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = track_in_agents
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = quorum factor
+DEBUG:root:matched! quorum factor
+DEBUG:root:
+
+----------- cell_def_tab.py: fill_xml(): ----------
+DEBUG:root:num cell defs = 2
+DEBUG:root:cdefs_in_tree =['ECM', 'pusher']
+DEBUG:root:
+--- key in param_d.keys() = ECM
+DEBUG:root:matched! ECM
+DEBUG:root:--- cell_adhesion_affinity= {'ECM': '1', 'pusher': '0'}
+DEBUG:root:ECM  --> 1
+DEBUG:root:pusher  --> 0
+DEBUG:root:
+
+ ====================> fill_xml_motility(): quorum factor = quorum factor 
+
+
+DEBUG:root:fill_xml_motility(): {'quorum factor': '1'}
+DEBUG:root:quorum factor  --> 1
+DEBUG:root:self.substrate_list = ['quorum factor']
+DEBUG:root:substrate = quorum factor
+DEBUG:root:------------------- fill_xml_interactions():  cdef= ECM
+DEBUG:root:--- live_phagocytosis_rate= {'ECM': '0', 'default': '0', 'pusher': '0.0', '': '0.0'}
+DEBUG:root:  key in live_phagocytosis_rate= ECM
+DEBUG:root:ECM  --> 0
+DEBUG:root:  key in live_phagocytosis_rate= default
+DEBUG:root:default  --> 0
+DEBUG:root:  key in live_phagocytosis_rate= pusher
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:  key in live_phagocytosis_rate= 
+DEBUG:root:--- attack_rate= {'ECM': '0', 'default': '0', 'pusher': '0.0', '': '0.0'}
+DEBUG:root:ECM  --> 0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:--- fusion_rate= {'ECM': '0', 'default': '0', 'pusher': '0.0', '': '0.0'}
+DEBUG:root:ECM  --> 0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:ECM  --> 0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:------------------- fill_xml_intracellular()
+DEBUG:root:------ ["intracellular"]: for ECM
+DEBUG:root:None
+DEBUG:root:
+
+DEBUG:root:------ ["custom_data"]: for ECM
+DEBUG:root:
+
+DEBUG:root:
+--- key in param_d.keys() = pusher
+DEBUG:root:matched! pusher
+DEBUG:root:--- cell_adhesion_affinity= {'ECM': '0.0', 'pusher': '1.0'}
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:pusher  --> 1.0
+DEBUG:root:
+
+ ====================> fill_xml_motility(): quorum factor = quorum factor 
+
+
+DEBUG:root:fill_xml_motility(): {'quorum factor': '0.0'}
+DEBUG:root:quorum factor  --> 0.0
+DEBUG:root:self.substrate_list = ['quorum factor']
+DEBUG:root:substrate = quorum factor
+DEBUG:root:------------------- fill_xml_interactions():  cdef= pusher
+DEBUG:root:--- live_phagocytosis_rate= {'ECM': '0.0', 'default': '0', 'pusher': '0.0'}
+DEBUG:root:  key in live_phagocytosis_rate= ECM
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:  key in live_phagocytosis_rate= default
+DEBUG:root:default  --> 0
+DEBUG:root:  key in live_phagocytosis_rate= pusher
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:--- attack_rate= {'ECM': '0.0', 'default': '0', 'pusher': '0.0'}
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:--- fusion_rate= {'ECM': '0.0', 'default': '0', 'pusher': '0.0'}
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:default  --> 0
+DEBUG:root:------------------- fill_xml_intracellular()
+DEBUG:root:------ ["intracellular"]: for pusher
+DEBUG:root:None
+DEBUG:root:
+
+DEBUG:root:------ ["custom_data"]: for pusher
+DEBUG:root:
+
+DEBUG:root:----------- end cell_def_tab.py: fill_xml(): ----------
+DEBUG:root:
+--------- user_params_tab.py:  fill_xml(): self.count = 125
+DEBUG:root:--------- found //user_parameters
+DEBUG:root:random_seed
+DEBUG:root:number_of_cells
+DEBUG:root:found 2
+DEBUG:root:===========  run_model_cb():  ============
+DEBUG:root:run_tab.py:  doing: mkdir output
+DEBUG:root:
+ ========================== run_tab.py: update_xml_from_gui(): self.xml_root = <Element 'PhysiCell_settings' at 0x15e20c7c0>
+DEBUG:root:----------- microenv_tab.py: fill_xml(): ----------
+DEBUG:root:microenv_tab.py: fill_xml(): num subtrates = 1
+DEBUG:root:substrates_in_tree =['quorum factor']
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = substrate
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = gradients
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = track_in_agents
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = quorum factor
+DEBUG:root:matched! quorum factor
+DEBUG:root:
+
+----------- cell_def_tab.py: fill_xml(): ----------
+DEBUG:root:num cell defs = 2
+DEBUG:root:cdefs_in_tree =['ECM', 'pusher']
+DEBUG:root:
+--- key in param_d.keys() = ECM
+DEBUG:root:matched! ECM
+DEBUG:root:--- cell_adhesion_affinity= {'ECM': '1', 'pusher': '0'}
+DEBUG:root:ECM  --> 1
+DEBUG:root:pusher  --> 0
+DEBUG:root:
+
+ ====================> fill_xml_motility(): quorum factor = quorum factor 
+
+
+DEBUG:root:fill_xml_motility(): {'quorum factor': '1'}
+DEBUG:root:quorum factor  --> 1
+DEBUG:root:self.substrate_list = ['quorum factor']
+DEBUG:root:substrate = quorum factor
+DEBUG:root:------------------- fill_xml_interactions():  cdef= ECM
+DEBUG:root:--- live_phagocytosis_rate= {'ECM': '0', 'default': '0', 'pusher': '0.0', '': '0.0'}
+DEBUG:root:  key in live_phagocytosis_rate= ECM
+DEBUG:root:ECM  --> 0
+DEBUG:root:  key in live_phagocytosis_rate= default
+DEBUG:root:default  --> 0
+DEBUG:root:  key in live_phagocytosis_rate= pusher
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:  key in live_phagocytosis_rate= 
+DEBUG:root:--- attack_rate= {'ECM': '0', 'default': '0', 'pusher': '0.0', '': '0.0'}
+DEBUG:root:ECM  --> 0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:--- fusion_rate= {'ECM': '0', 'default': '0', 'pusher': '0.0', '': '0.0'}
+DEBUG:root:ECM  --> 0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:ECM  --> 0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:------------------- fill_xml_intracellular()
+DEBUG:root:------ ["intracellular"]: for ECM
+DEBUG:root:None
+DEBUG:root:
+
+DEBUG:root:------ ["custom_data"]: for ECM
+DEBUG:root:
+
+DEBUG:root:
+--- key in param_d.keys() = pusher
+DEBUG:root:matched! pusher
+DEBUG:root:--- cell_adhesion_affinity= {'ECM': '0.0', 'pusher': '1.0'}
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:pusher  --> 1.0
+DEBUG:root:
+
+ ====================> fill_xml_motility(): quorum factor = quorum factor 
+
+
+DEBUG:root:fill_xml_motility(): {'quorum factor': '0.0'}
+DEBUG:root:quorum factor  --> 0.0
+DEBUG:root:self.substrate_list = ['quorum factor']
+DEBUG:root:substrate = quorum factor
+DEBUG:root:------------------- fill_xml_interactions():  cdef= pusher
+DEBUG:root:--- live_phagocytosis_rate= {'ECM': '0.0', 'default': '0', 'pusher': '0.0'}
+DEBUG:root:  key in live_phagocytosis_rate= ECM
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:  key in live_phagocytosis_rate= default
+DEBUG:root:default  --> 0
+DEBUG:root:  key in live_phagocytosis_rate= pusher
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:--- attack_rate= {'ECM': '0.0', 'default': '0', 'pusher': '0.0'}
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:--- fusion_rate= {'ECM': '0.0', 'default': '0', 'pusher': '0.0'}
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:default  --> 0
+DEBUG:root:------------------- fill_xml_intracellular()
+DEBUG:root:------ ["intracellular"]: for pusher
+DEBUG:root:None
+DEBUG:root:
+
+DEBUG:root:------ ["custom_data"]: for pusher
+DEBUG:root:
+
+DEBUG:root:----------- end cell_def_tab.py: fill_xml(): ----------
+DEBUG:root:
+--------- user_params_tab.py:  fill_xml(): self.count = 125
+DEBUG:root:--------- found //user_parameters
+DEBUG:root:random_seed
+DEBUG:root:number_of_cells
+DEBUG:root:found 2
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16c377a00>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16a650d00>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x165f05e20>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16ab7a550>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x1668c2730>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16aaea610>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16ab41c70>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x15e218310>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16c322cd0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x166942730>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x165a40760>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x159da07f0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16ab914f0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x159b9d340>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16ab5aca0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x1668b6c10>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x165f7e250>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x165fe9160>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x159c17d00>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x1668b6190>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16c342bb0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x165f0f340>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16aafa370>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16c304a60>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16ab45670>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16a6c5f70>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x165ade9d0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x159c0cd60>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x166866c70>
+DEBUG:root:===========  run_model_cb():  ============
+DEBUG:root:run_tab.py:  doing: mkdir output
+DEBUG:root:
+ ========================== run_tab.py: update_xml_from_gui(): self.xml_root = <Element 'PhysiCell_settings' at 0x15e20c7c0>
+DEBUG:root:----------- microenv_tab.py: fill_xml(): ----------
+DEBUG:root:microenv_tab.py: fill_xml(): num subtrates = 1
+DEBUG:root:substrates_in_tree =['quorum factor']
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = substrate
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = gradients
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = track_in_agents
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = quorum factor
+DEBUG:root:matched! quorum factor
+DEBUG:root:
+
+----------- cell_def_tab.py: fill_xml(): ----------
+DEBUG:root:num cell defs = 2
+DEBUG:root:cdefs_in_tree =['ECM', 'pusher']
+DEBUG:root:
+--- key in param_d.keys() = ECM
+DEBUG:root:matched! ECM
+DEBUG:root:--- cell_adhesion_affinity= {'ECM': '1', 'pusher': '0'}
+DEBUG:root:ECM  --> 1
+DEBUG:root:pusher  --> 0
+DEBUG:root:
+
+ ====================> fill_xml_motility(): quorum factor = quorum factor 
+
+
+DEBUG:root:fill_xml_motility(): {'quorum factor': '1'}
+DEBUG:root:quorum factor  --> 1
+DEBUG:root:self.substrate_list = ['quorum factor']
+DEBUG:root:substrate = quorum factor
+DEBUG:root:------------------- fill_xml_interactions():  cdef= ECM
+DEBUG:root:--- live_phagocytosis_rate= {'ECM': '0', 'default': '0', 'pusher': '0.0', '': '0.0'}
+DEBUG:root:  key in live_phagocytosis_rate= ECM
+DEBUG:root:ECM  --> 0
+DEBUG:root:  key in live_phagocytosis_rate= default
+DEBUG:root:default  --> 0
+DEBUG:root:  key in live_phagocytosis_rate= pusher
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:  key in live_phagocytosis_rate= 
+DEBUG:root:--- attack_rate= {'ECM': '0', 'default': '0', 'pusher': '0.0', '': '0.0'}
+DEBUG:root:ECM  --> 0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:--- fusion_rate= {'ECM': '0', 'default': '0', 'pusher': '0.0', '': '0.0'}
+DEBUG:root:ECM  --> 0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:ECM  --> 0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:------------------- fill_xml_intracellular()
+DEBUG:root:------ ["intracellular"]: for ECM
+DEBUG:root:None
+DEBUG:root:
+
+DEBUG:root:------ ["custom_data"]: for ECM
+DEBUG:root:
+
+DEBUG:root:
+--- key in param_d.keys() = pusher
+DEBUG:root:matched! pusher
+DEBUG:root:--- cell_adhesion_affinity= {'ECM': '0.0', 'pusher': '1.0'}
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:pusher  --> 1.0
+DEBUG:root:
+
+ ====================> fill_xml_motility(): quorum factor = quorum factor 
+
+
+DEBUG:root:fill_xml_motility(): {'quorum factor': '0.0'}
+DEBUG:root:quorum factor  --> 0.0
+DEBUG:root:self.substrate_list = ['quorum factor']
+DEBUG:root:substrate = quorum factor
+DEBUG:root:------------------- fill_xml_interactions():  cdef= pusher
+DEBUG:root:--- live_phagocytosis_rate= {'ECM': '0.0', 'default': '0', 'pusher': '0.0'}
+DEBUG:root:  key in live_phagocytosis_rate= ECM
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:  key in live_phagocytosis_rate= default
+DEBUG:root:default  --> 0
+DEBUG:root:  key in live_phagocytosis_rate= pusher
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:--- attack_rate= {'ECM': '0.0', 'default': '0', 'pusher': '0.0'}
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:--- fusion_rate= {'ECM': '0.0', 'default': '0', 'pusher': '0.0'}
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:default  --> 0
+DEBUG:root:------------------- fill_xml_intracellular()
+DEBUG:root:------ ["intracellular"]: for pusher
+DEBUG:root:None
+DEBUG:root:
+
+DEBUG:root:------ ["custom_data"]: for pusher
+DEBUG:root:
+
+DEBUG:root:----------- end cell_def_tab.py: fill_xml(): ----------
+DEBUG:root:
+--------- user_params_tab.py:  fill_xml(): self.count = 125
+DEBUG:root:--------- found //user_parameters
+DEBUG:root:random_seed
+DEBUG:root:number_of_cells
+DEBUG:root:found 2
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_xmin,xmax=  (-500.0, 500.0)
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_ymin,ymax=  (-500.0, 500.0)
+DEBUG:root:ics_tab.py: volume= 2494.0, radius= 8.412710547954228
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_xmin,xmax=  (-500.0, 500.0)
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_ymin,ymax=  (-500.0, 500.0)
+DEBUG:root:ics_tab.py: volume= 2494.0, radius= 8.412710547954228
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_xmin,xmax=  (-500.0, 500.0)
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_ymin,ymax=  (-500.0, 500.0)
+DEBUG:root:ics_tab.py: volume= 2494.0, radius= 8.412710547954228
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_xmin,xmax=  (-500.0, 500.0)
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_ymin,ymax=  (-500.0, 500.0)
+DEBUG:root:ics_tab.py: volume= 2494.0, radius= 8.412710547954228
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_xmin,xmax=  (-500.0, 500.0)
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_ymin,ymax=  (-500.0, 500.0)
+DEBUG:root:ics_tab.py: volume= 2494.0, radius= 8.412710547954228
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_xmin,xmax=  (-500.0, 500.0)
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_ymin,ymax=  (-500.0, 500.0)
+DEBUG:root:ics_tab.py: volume= 2494.0, radius= 8.412710547954228
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_xmin,xmax=  (-500.0, 500.0)
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_ymin,ymax=  (-500.0, 500.0)
+DEBUG:root:ics_tab.py: volume= 2494.0, radius= 8.412710547954228
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_xmin,xmax=  (-500.0, 500.0)
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_ymin,ymax=  (-500.0, 500.0)
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_xmin,xmax=  (-500.0, 500.0)
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_ymin,ymax=  (-500.0, 500.0)
+DEBUG:root:ics_tab.py: volume= 2494.0, radius= 8.412710547954228
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_xmin,xmax=  (-500.0, 500.0)
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_ymin,ymax=  (-500.0, 500.0)
+DEBUG:root:ics_tab.py: volume= 2494.0, radius= 8.412710547954228
+DEBUG:root:===========  run_model_cb():  ============
+DEBUG:root:run_tab.py:  doing: mkdir output
+DEBUG:root:
+ ========================== run_tab.py: update_xml_from_gui(): self.xml_root = <Element 'PhysiCell_settings' at 0x15e20c7c0>
+DEBUG:root:----------- microenv_tab.py: fill_xml(): ----------
+DEBUG:root:microenv_tab.py: fill_xml(): num subtrates = 1
+DEBUG:root:substrates_in_tree =['quorum factor']
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = substrate
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = gradients
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = track_in_agents
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = quorum factor
+DEBUG:root:matched! quorum factor
+DEBUG:root:
+
+----------- cell_def_tab.py: fill_xml(): ----------
+DEBUG:root:num cell defs = 2
+DEBUG:root:cdefs_in_tree =['ECM', 'pusher']
+DEBUG:root:
+--- key in param_d.keys() = ECM
+DEBUG:root:matched! ECM
+DEBUG:root:--- cell_adhesion_affinity= {'ECM': '1', 'pusher': '0'}
+DEBUG:root:ECM  --> 1
+DEBUG:root:pusher  --> 0
+DEBUG:root:
+
+ ====================> fill_xml_motility(): quorum factor = quorum factor 
+
+
+DEBUG:root:fill_xml_motility(): {'quorum factor': '1'}
+DEBUG:root:quorum factor  --> 1
+DEBUG:root:self.substrate_list = ['quorum factor']
+DEBUG:root:substrate = quorum factor
+DEBUG:root:------------------- fill_xml_interactions():  cdef= ECM
+DEBUG:root:--- live_phagocytosis_rate= {'ECM': '0', 'default': '0', 'pusher': '0.0', '': '0.0'}
+DEBUG:root:  key in live_phagocytosis_rate= ECM
+DEBUG:root:ECM  --> 0
+DEBUG:root:  key in live_phagocytosis_rate= default
+DEBUG:root:default  --> 0
+DEBUG:root:  key in live_phagocytosis_rate= pusher
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:  key in live_phagocytosis_rate= 
+DEBUG:root:--- attack_rate= {'ECM': '0', 'default': '0', 'pusher': '0.0', '': '0.0'}
+DEBUG:root:ECM  --> 0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:--- fusion_rate= {'ECM': '0', 'default': '0', 'pusher': '0.0', '': '0.0'}
+DEBUG:root:ECM  --> 0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:ECM  --> 0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:------------------- fill_xml_intracellular()
+DEBUG:root:------ ["intracellular"]: for ECM
+DEBUG:root:None
+DEBUG:root:
+
+DEBUG:root:------ ["custom_data"]: for ECM
+DEBUG:root:
+
+DEBUG:root:
+--- key in param_d.keys() = pusher
+DEBUG:root:matched! pusher
+DEBUG:root:--- cell_adhesion_affinity= {'ECM': '0.0', 'pusher': '1.0'}
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:pusher  --> 1.0
+DEBUG:root:
+
+ ====================> fill_xml_motility(): quorum factor = quorum factor 
+
+
+DEBUG:root:fill_xml_motility(): {'quorum factor': '0.0'}
+DEBUG:root:quorum factor  --> 0.0
+DEBUG:root:self.substrate_list = ['quorum factor']
+DEBUG:root:substrate = quorum factor
+DEBUG:root:------------------- fill_xml_interactions():  cdef= pusher
+DEBUG:root:--- live_phagocytosis_rate= {'ECM': '0.0', 'default': '0', 'pusher': '0.0'}
+DEBUG:root:  key in live_phagocytosis_rate= ECM
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:  key in live_phagocytosis_rate= default
+DEBUG:root:default  --> 0
+DEBUG:root:  key in live_phagocytosis_rate= pusher
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:--- attack_rate= {'ECM': '0.0', 'default': '0', 'pusher': '0.0'}
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:--- fusion_rate= {'ECM': '0.0', 'default': '0', 'pusher': '0.0'}
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:default  --> 0
+DEBUG:root:------------------- fill_xml_intracellular()
+DEBUG:root:------ ["intracellular"]: for pusher
+DEBUG:root:None
+DEBUG:root:
+
+DEBUG:root:------ ["custom_data"]: for pusher
+DEBUG:root:
+
+DEBUG:root:----------- end cell_def_tab.py: fill_xml(): ----------
+DEBUG:root:
+--------- user_params_tab.py:  fill_xml(): self.count = 125
+DEBUG:root:--------- found //user_parameters
+DEBUG:root:random_seed
+DEBUG:root:number_of_cells
+DEBUG:root:found 2
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_xmin,xmax=  (-500.0, 500.0)
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_ymin,ymax=  (-500.0, 500.0)
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_xmin,xmax=  (-500.0, 500.0)
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_ymin,ymax=  (-500.0, 500.0)
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_xmin,xmax=  (-500.0, 500.0)
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_ymin,ymax=  (-500.0, 500.0)
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_xmin,xmax=  (-500.0, 500.0)
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_ymin,ymax=  (-500.0, 500.0)
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_xmin,xmax=  (-500.0, 500.0)
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_ymin,ymax=  (-500.0, 500.0)
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_xmin,xmax=  (-500.0, 500.0)
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_ymin,ymax=  (-500.0, 500.0)
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_xmin,xmax=  (-500.0, 500.0)
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_ymin,ymax=  (-500.0, 500.0)
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_xmin,xmax=  (-500.0, 500.0)
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_ymin,ymax=  (-500.0, 500.0)
