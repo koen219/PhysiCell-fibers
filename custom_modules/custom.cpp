@@ -127,7 +127,7 @@ void create_cell_types( void )
     pCD->functions.contact_function = fiber_contact_function; 
 
     pCD->phenotype.mechanics.maximum_number_of_attachments = 3; 
-    pCD->phenotype.mechanics.attachment_elastic_constant = 0.2; 
+    pCD->phenotype.mechanics.attachment_elastic_constant = parameters.doubles("springconstant"); //0.2; 
     pCD->phenotype.mechanics.attachment_rate = parameters.doubles("attchementrate"); //.1; 
     pCD->phenotype.mechanics.detachment_rate = parameters.doubles("detachrate"); //1e-6; 
 
@@ -556,6 +556,10 @@ void fiber_custom_function( Cell* pCell, Phenotype& phenotype , double dt )
             pRight->velocity += forces[2]; 
         }
     }
+
+    int n = pCell->state.number_of_attached_cells(); 
+    set_single_behavior( pCell, "migration speed", 1 + n);
+
 
 //    if( PhysiCell_globals.current_time > 200 )
 //    {

@@ -80,7 +80,7 @@
             <phenotype>
                 <cycle code="5" name="live">
                     <phase_transition_rates units="1/min">
-                        <rate start_index="0" end_index="0" fixed_duration="false">0.000</rate>
+                        <rate start_index="0" end_index="0" fixed_duration="false">0.0</rate>
                     </phase_transition_rates>
                 </cycle>
                 <death>
@@ -126,7 +126,7 @@
                     <relative_rupture_volume units="dimensionless">2.0</relative_rupture_volume>
                 </volume>
                 <mechanics>
-                    <cell_cell_adhesion_strength units="micron/min">0.4</cell_cell_adhesion_strength>
+                    <cell_cell_adhesion_strength units="micron/min">0</cell_cell_adhesion_strength>
                     <cell_cell_repulsion_strength units="micron/min">20.0</cell_cell_repulsion_strength>
                     <relative_maximum_adhesion_distance units="dimensionless">1.25</relative_maximum_adhesion_distance>
                     <cell_adhesion_affinities>
@@ -345,8 +345,9 @@
         <random_seed type="int" units="dimensionless" description="">0</random_seed>
         <number_of_cells type="int" units="none" description="initial number of cells (for each cell type)">0</number_of_cells>
         <attchementrate type="double" units="" description="">0.1</attchementrate>
-        <attchementaff type="double" units="" description="">1.5</attchementaff>
-        <detachrate type="double" units="" description="">0.05</detachrate>
+        <attchementaff type="double" units="" description="">2.5</attchementaff>
+        <detachrate type="double" units="" description="">0.008</detachrate>
         <detachaff type="double" units="" description="">0</detachaff>
+        <springconstant type="double" units="" description="">0.4</springconstant>
     </user_parameters>
 </PhysiCell_settings>
