@@ -229,6 +229,9 @@ std::vector<std::string> my_coloring_function( Cell* pCell )
     if( n_attached == 2 )
     { out[0] = "blue"; }
 
+    if( n_attached == 3 )
+    { out[0] = "aquamarine"; }
+
     out[2] = out[0]; 
     out[3] = out[0]; 
 
@@ -524,9 +527,129 @@ void dynamic_spring_attachments( Cell* pCell , Phenotype& phenotype, double dt )
     return; 
 }
 
+void dynamic_ECM_link_attachments( Cell* pCell , Phenotype& phenotype, double dt )
+{
+    // check for detachments 
+    double detachment_probability = phenotype.mechanics.detachment_rate * dt; 
+    for( int j=0; j < pCell->state.attached_cells.size(); j++ )
+    {
+        Cell* pTest = pCell->state.attached_cells[j]; 
+
+        bool detachment_possible = true; 
+        if( get_single_signal(pCell,"custom:crosslink") > 0 || 
+            get_single_signal(pTest,"custom:crosslink") > 0 )
+        { detachment_possible = false; }
+
+        if( detachment_possible )
+        {
+            if( UniformRandom() <= detachment_probability )
+            { detach_cells( pCell , pTest ); }
+        }
+    }
+
+    // check if I have max number of attachments 
+    if( pCell->state.attached_cells.size() >= phenotype.mechanics.maximum_number_of_attachments )
+    { return; }
+
+    // check for new attachments; 
+    double attachment_probability = phenotype.mechanics.attachment_rate * dt; 
+    bool done = false; 
+    int j = 0; 
+    while( done == false && j < pCell->state.neighbors.size() )
+    {
+        Cell* pTest = pCell->state.neighbors[j]; 
+        if( pTest->state.number_of_attached_cells() < pTest->phenotype.mechanics.maximum_number_of_attachments )
+        {
+            // double affinity = phenotype.mechanics.cell_adhesion_affinity[ pTest->type]; 
+            std::string search_string = "adhesive affinity to " + pTest->type_name; 
+            double affinity = get_single_behavior( pCell , search_string );
+
+            double prob = attachment_probability * affinity; 
+            if( UniformRandom() <= prob )
+            {
+                // attempt the attachment. testing for prior connection is already automated 
+                attach_cells( pCell, pTest ); 
+                if( pCell->state.attached_cells.size() >= phenotype.mechanics.maximum_number_of_attachments )
+                { done = true; }
+            }
+        }
+        j++; 
+    }
+    return; 
+}
+
+
+void dynamic_ECM_crosslink_attachments( Cell* pCell , Phenotype& phenotype, double dt )
+{
+    if( pCell->state.number_of_attached_cells() < 1 )
+    { return; }
+
+    bool i_am_crosslink = (bool) get_single_signal( pCell , "custom:crosslink" ); 
+
+    // check for crosslink detachments 
+    double detachment_probability  = 0; 
+    for( int j=0; j < pCell->state.attached_cells.size(); j++ )
+    {
+        Cell* pTest = pCell->state.attached_cells[j]; 
+        bool test_is_crosslink = (bool) get_single_signal( pTest , "custom:crosslink" ); 
+        if( i_am_crosslink )
+        { detachment_probability = get_single_signal(pCell,"custom:crosslink_detachment_rate") * dt; }
+        if( test_is_crosslink )
+        { detachment_probability = get_single_signal(pTest,"custom:crosslink_detachment_rate") * dt; }
+
+        if( UniformRandom() <= detachment_probability )
+        {
+            detach_cells( pCell , pTest ); 
+            set_single_behavior( pCell , "custom:crosslink" , 0 ); 
+            set_single_behavior( pTest , "custom:crosslink" , 0 ); 
+        }
+    }
+
+/*
+    // check if I have max number of attachments 
+    if( pCell->state.attached_cells.size() >= phenotype.mechanics.maximum_number_of_attachments )
+    { return; }
+*/ 
+    // allow me to form a cross link if I have one regular attachment 
+    if( pCell->state.number_of_attached_cells() != 1 )
+    { return; }
+
+    // check for new attachments; 
+    double attachment_probability = get_single_signal( pCell ,"custom:crosslink_attachment_rate" ) * dt; 
+    bool done = false; 
+    int j = 0; 
+    while( done == false && j < pCell->state.neighbors.size() )
+    {
+        Cell* pTest = pCell->state.neighbors[j]; 
+        bool crosslink_possible = true; 
+        if( get_single_signal(pTest,"custom:crosslink") > 0.5 )
+        { crosslink_possible = false; }
+        if( pTest->state.number_of_attached_cells() != 2 ) 
+        { crosslink_possible = false; }
+
+        //    std::string search_string = "adhesive affinity to " + pTest->type_name; 
+        //    double affinity = get_single_behavior( pCell , search_string );
+        // double prob = attachment_probability * affinity; 
+
+        if( crosslink_possible )
+        {
+            if( UniformRandom() <= attachment_probability )
+            {
+                // attempt the attachment. testing for prior connection is already automated 
+                attach_cells( pCell, pTest ); 
+                if( pCell->state.attached_cells.size() >= phenotype.mechanics.maximum_number_of_attachments )
+                { done = true; set_single_behavior(pCell,"custom:crosslink" , 1); }
+            }
+        }
+        j++; 
+    }
+    return; 
+}
+
 void fiber_custom_function( Cell* pCell, Phenotype& phenotype , double dt )
 {
-    dynamic_spring_attachments(pCell, phenotype, dt ); 
+    dynamic_ECM_link_attachments(pCell, phenotype, dt ); 
+    dynamic_ECM_crosslink_attachments(pCell, phenotype, dt );
 
     if( pCell->state.number_of_attached_cells() >= 2 )
     {
