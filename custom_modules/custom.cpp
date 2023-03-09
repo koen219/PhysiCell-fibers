@@ -126,14 +126,16 @@ void create_cell_types( void )
 //    pCD->functions.update_migration_bias = rotating_migration_bias; 
     pCD->functions.contact_function = fiber_contact_function; 
 
-    pCD->phenotype.mechanics.maximum_number_of_attachments = 3; 
-    pCD->phenotype.mechanics.attachment_elastic_constant = 0.2; 
-    pCD->phenotype.mechanics.attachment_rate = parameters.doubles("attchementrate"); //.1; 
-    pCD->phenotype.mechanics.detachment_rate = parameters.doubles("detachrate"); //1e-6; 
+    pCD->phenotype.mechanics.maximum_number_of_attachments = parameters.ints("max_attach"); 
+    pCD->phenotype.mechanics.attachment_elastic_constant = parameters.doubles("linear_spring_constant"); 
+    pCD->phenotype.mechanics.attachment_rate = parameters.doubles("attach_rate");
+    pCD->phenotype.mechanics.detachment_rate = parameters.doubles("detach_rate");
+
+    pCD->phenotype.mechanics.cell_BM_repulsion_strength = 100;  // scales the repulsion to the boundary
 
     pCD = find_cell_definition( "pusher"); 
     if( pCD )
-    { pCD->functions.update_migration_bias = rotating_migration_bias;}
+    { pCD->functions.update_migration_bias = rotating_migration_bias; }
 
 	/*
 	   This builds the map of cell definitions and summarizes the setup. 
@@ -227,9 +229,16 @@ std::vector<std::string> my_coloring_function( Cell* pCell )
     { out[0] = "red"; }
 
     if( n_attached == 2 )
-    { out[0] = "blue"; }
-    if( n_attached == 3 )
     { out[0] = "orange"; }
+
+    if( n_attached == 3 )
+    { out[0] = "yellow"; }
+
+    if( n_attached == 4 )
+    { out[0] = "green"; }
+
+    if( n_attached == 5 )
+    { out[0] = "blue"; }
 
     out[2] = out[0]; 
     out[3] = out[0]; 
@@ -347,14 +356,12 @@ void dynamic_spring_attachments( Cell* pCell , Phenotype& phenotype, double dt )
     // check for detachments 
     int number_of_attached_cells = pCell->state.number_of_attached_cells();
     
-    double detachment_probability = 0.0; //
-    
-    if (number_of_attached_cells ==1)
-        detachment_probability = phenotype.mechanics.detachment_rate * dt;
-    if (number_of_attached_cells ==2)
-        detachment_probability = 0;
-    if (number_of_attached_cells ==3)
-        detachment_probability = phenotype.mechanics.detachment_rate*2.0*dt;
+    double detachment_probability = 0.0;
+    if (number_of_attached_cells >0)
+    {
+        double detachment_sens = 1.1;
+        detachment_probability = (phenotype.mechanics.detachment_rate * dt) * pow( detachment_sens, number_of_attached_cells)  ;
+    }
 
     for( int j=0; j < pCell->state.attached_cells.size(); j++ )
     {
@@ -368,8 +375,7 @@ void dynamic_spring_attachments( Cell* pCell , Phenotype& phenotype, double dt )
     { return; }
 
     // check for new attachments; 
-    double attachaff_number_of_attached_cells = pow(parameters.doubles("attchementaff") , static_cast<double>(pCell->state.number_of_attached_cells()));
-    double attachment_probability = ( 1.0 / (1.0 + attachaff_number_of_attached_cells )) * phenotype.mechanics.attachment_rate * dt; 
+    double attachment_probability = phenotype.mechanics.attachment_rate * dt * pow(2.71, -number_of_attached_cells);
     bool done = false; 
     int j = 0; 
     while( done == false && j < pCell->state.neighbors.size() )
@@ -399,7 +405,8 @@ void fiber_custom_function( Cell* pCell, Phenotype& phenotype , double dt )
 {
     dynamic_spring_attachments(pCell, phenotype, dt ); 
 
-    if( pCell->state.number_of_attached_cells() == 2 )
+    #pragma omp critical 
+    if( pCell->state.number_of_attached_cells() > 1 )
     {
         std::vector< std::vector<double> > forces = compute_angular_force_contributions(pCell,phenotype,dt); 
         Cell* pLeft = pCell->state.attached_cells[0];
@@ -407,7 +414,6 @@ void fiber_custom_function( Cell* pCell, Phenotype& phenotype , double dt )
         Cell* pRight = pCell->state.attached_cells[1];
 
         pMiddle->velocity += forces[1]; 
-        #pragma omp critical 
         {
             pLeft->velocity += forces[0]; 
             pRight->velocity += forces[2]; 

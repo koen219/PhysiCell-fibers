@@ -1,9 +1,9 @@
 <PhysiCell_settings version="devel-version">
 	<domain>
-		<x_min>-200</x_min>
-		<x_max>200</x_max>
-		<y_min>-200</y_min>
-		<y_max>200</y_max>
+		<x_min>-100</x_min>
+		<x_max>100</x_max>
+		<y_min>-100</y_min>
+		<y_max>100</y_max>
 		<z_min>-10</z_min>
 		<z_max>10</z_max>
 		<dx>20</dx>
@@ -13,7 +13,7 @@
 	</domain>
 	
 	<overall>
-		<max_time units="min">2400</max_time> 
+		<max_time units="min">1000</max_time> 
 		<time_units>min</time_units>
 		<space_units>micron</space_units>
 	
@@ -154,7 +154,7 @@
           </mechanics>
 
           <motility>
-            <speed units="micron/min">5</speed>
+            <speed units="micron/min">2</speed>
             <persistence_time units="min">1</persistence_time>
             <migration_bias units="dimensionless">0</migration_bias>
             <options>
@@ -218,7 +218,7 @@
           </phenotype>
         <custom_data>
           <preferred_angle conserved="false" units="radians" description="">3.14</preferred_angle>
-          <angular_spring_constant conserved="false" units="none" description="">100</angular_spring_constant>
+          <angular_spring_constant conserved="false" units="none" description="">10</angular_spring_constant>
         </custom_data>
       </cell_definition>
 
@@ -374,10 +374,10 @@
 	<user_parameters>
 		<random_seed type="int" units="dimensionless" description="">0</random_seed>
         <number_of_cells type="int" units="none" description="initial number of cells (for each cell type)">0</number_of_cells>
-        <attchementrate type="double" units="" description="">0.1</attchementrate>
-        <attchementaff type="double" units="" description="">1.5</attchementaff>
-        <detachrate type="double" units="" description="">0.05</detachrate>
-        <detachaff type="double" units="" description="">0</detachaff>
+        <attach_rate type="double" units="" description="">1</attach_rate>
+        <detach_rate type="double" units="" description="">1</detach_rate>
+        <linear_spring_constant type="double" units="" description="">0.1</linear_spring_constant>
+        <max_attach type="int" units="" description="">3</max_attach>
     </user_parameters>
 	
 </PhysiCell_settings>
