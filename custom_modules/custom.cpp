@@ -401,23 +401,8 @@ void fiber_custom_function( Cell* pCell, Phenotype& phenotype , double dt )
         }
     }
 
-    if( PhysiCell_globals.current_time > 200 )
-    {
-        set_single_behavior( pCell , "migration speed" , 0); 
-        return; 
-    }
-
     // just test code from here on down. 
 
-    if( pCell->state.attached_cells.size() == 0 )
-    { 
-        set_single_behavior( pCell , "chemotactic sensitivity to quorum factor" , 1 );  
-        set_single_behavior( pCell , "migration speed" , 2 ); 
-
-        set_single_behavior( pCell , "quorum factor secretion" , 5 ); // 1
-
-        return; 
-    }
 
     if( pCell->state.attached_cells.size() == 1 )
     {
