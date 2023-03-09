@@ -332,3 +332,280 @@ def getAngularHarmonicForce_Monasse(A, B, C, k, theta0):
  */
 
 
+<<<<<<< Updated upstream
+=======
+/* Force calculation based on:
+	Monasse, Bernard, and Frédéric Boussinot. 
+    "Determination of forces from a potential in molecular dynamics." 
+    arXiv preprint arXiv:1401.1181 (2014).
+
+
+    Returns the angular harmonic forces (F_a, F_b, F_c) in the bond
+    A--B--C
+    - A, B, and C are lists with coordinates of the points.
+    - k is the spring constant.
+    - theta0 the rest length of the bond in radians.
+    The forces on A, B, and C are calculated as:
+    
+    F_a = k*(theta - theta0) * p_a
+    
+    F_c = k*(theta - theta0) * p_c
+    
+    F_b = -F_a - F_c
+    
+    - p_a is a unit vector in the ABC plane orthogonal to (BA)
+    - p_c is a unit vector in the ABC plane orthogonal to (CB)
+    - theta is the angle ABC in radians
+*/
+std::vector< std::vector<double> > compute_angular_force_contributions( Cell* pCell , Phenotype& phenotype , double dt )
+{
+    if( pCell->state.number_of_attached_cells() < 2 )
+    { std::cout << "bad move genius" << std::endl; exit(-1); }
+
+    double theta0 = get_single_signal( pCell , "custom:preferred_angle" ); 
+    double k = get_single_signal( pCell , "custom:angular_spring_constant" ); 
+    
+    Cell* pLeft = pCell->state.attached_cells[0];
+    Cell* pMiddle = pCell; 
+    Cell* pRight = pCell->state.attached_cells[1]; 
+
+    std::vector<double> A = pLeft->position; 
+    std::vector<double> B = pMiddle->position;  
+    std::vector<double> C = pRight->position;  
+
+//    std::cout << A << " " << B << " " << C << std::endl; 
+ //   std::cout << theta0 << " " << k << std::endl; 
+
+    std::vector<double> BA = B-A; 
+    std::vector<double> BC = B-C;
+    std::vector<double> CB = C-B; 
+
+    double BA_mag = norm(BA); 
+    double BC_mag = norm(BC);
+
+//    std::cout << BA << " " << BC << " " << CB <<  " " << BA_mag << " " << BC_mag << std::endl; 
+
+    std::vector<double> BA_cross_BC = BioFVM::cross_product( BA, BC );
+
+//    std::cout << BA_cross_BC << std::endl; 
+
+    std::vector<double> p_a, p_b, p_c;
+
+	// If BA and BC are colinear (cross product is 0 vector), 
+	// take an arbitrary orthogonal vector (see: https://math.stackexchange.com/q/3077100)
+    if ( not (norm(BA_cross_BC) > 0)){
+        std::vector<double> orthogonal_vector = {
+            BA[1] + BA[2],
+            BA[2] - BA[0],
+            -BA[0] - BA[1]
+            };
+        p_a = BioFVM::cross_product( BA , orthogonal_vector );
+        p_a = (1/ norm(p_a)) * p_a ;
+        p_c = BioFVM::cross_product( CB , orthogonal_vector );
+        p_c = (1/ norm(p_c))* p_c  ;
+    }
+    else{
+        p_a = BioFVM::cross_product( BA , BA_cross_BC );
+        p_a = (1/norm(p_a)) * p_a  ;
+        p_c = BioFVM::cross_product( CB , BA_cross_BC );
+        p_c = (1 / norm(p_c) ) * p_c ;
+    }
+
+    // Capping the value is necessary to avoid numerical errors 
+    // when vectors are colinear the argument can be = 1.0000000000000002
+    // which is outside of the range of acos, defined for [-1, 1]
+    double costheta = BioFVM::dot_product(BA,BC) / ( BA_mag * BC_mag );
+    if( costheta > 1 )
+    { costheta = 1; }
+    if( costheta < -1 )
+    { costheta = -1; }
+
+    double theta = acos(costheta); 
+
+    double delta_theta = k*(theta - theta0);
+ //   std::cout << p_a << " " << p_c << std::endl; 
+ //   std::cout << costheta << " " << theta << " " << delta_theta << std::endl; 
+
+
+    std::vector<double> F_a = (delta_theta/BA_mag) * p_a  ;
+    std::vector<double> F_c = (delta_theta/BC_mag) * p_c ;
+    std::vector<double> F_b = (-1.0)*F_a - F_c;
+    std::vector< std::vector<double> > out;
+    out.push_back(F_a);
+    out.push_back(F_b);
+    out.push_back(F_c);
+
+    return out;
+}
+
+
+
+void dynamic_spring_attachments( Cell* pCell , Phenotype& phenotype, double dt )
+{
+    // check for detachments 
+    double detachment_probability = phenotype.mechanics.detachment_rate * dt; 
+    for( int j=0; j < pCell->state.attached_cells.size(); j++ )
+    {
+        Cell* pTest = pCell->state.attached_cells[j]; 
+        if( UniformRandom() <= detachment_probability )
+        { detach_cells( pCell , pTest ); }
+    }
+
+    // check if I have max number of attachments 
+    if( pCell->state.attached_cells.size() >= phenotype.mechanics.maximum_number_of_attachments )
+    { return; }
+
+    // check for new attachments; 
+    double attachment_probability = phenotype.mechanics.attachment_rate * dt; 
+    bool done = false; 
+    int j = 0; 
+    while( done == false && j < pCell->state.neighbors.size() )
+    {
+        Cell* pTest = pCell->state.neighbors[j]; 
+        if( pTest->state.number_of_attached_cells() < pTest->phenotype.mechanics.maximum_number_of_attachments )
+        {
+            // double affinity = phenotype.mechanics.cell_adhesion_affinity[ pTest->type]; 
+            std::string search_string = "adhesive affinity to " + pTest->type_name; 
+            double affinity = get_single_behavior( pCell , search_string );
+
+            double prob = attachment_probability * affinity; 
+            if( UniformRandom() <= prob )
+            {
+                // attempt the attachment. testing for prior connection is already automated 
+                attach_cells( pCell, pTest ); 
+                if( pCell->state.attached_cells.size() >= phenotype.mechanics.maximum_number_of_attachments )
+                { done = true; }
+            }
+        }
+        j++; 
+    }
+    return; 
+}
+
+void fiber_custom_function( Cell* pCell, Phenotype& phenotype , double dt )
+{
+    dynamic_spring_attachments(pCell, phenotype, dt ); 
+
+    if( pCell->state.number_of_attached_cells() >= 2 )
+    {
+        std::vector< std::vector<double> > forces = compute_angular_force_contributions(pCell,phenotype,dt); 
+        Cell* pLeft = pCell->state.attached_cells[0];
+        Cell* pMiddle = pCell;
+        Cell* pRight = pCell->state.attached_cells[1];
+
+        pMiddle->velocity += forces[1]; 
+        #pragma omp critical 
+        {
+            pLeft->velocity += forces[0]; 
+            pRight->velocity += forces[2]; 
+        }
+    }
+
+    if( PhysiCell_globals.current_time > 9e99 )
+    {
+        set_single_behavior( pCell , "migration speed" , 0); 
+        return; 
+    }
+
+    // just test code from here on down. 
+
+    if( pCell->state.attached_cells.size() == 0 )
+    { 
+        set_single_behavior( pCell , "chemotactic sensitivity to quorum factor" , 1 );  
+        set_single_behavior( pCell , "migration speed" , 2 ); 
+
+        set_single_behavior( pCell , "quorum factor secretion" , 5 ); // 1
+
+        return; 
+    }
+
+    if( pCell->state.attached_cells.size() == 1 )
+    {
+        double t =  PhysiCell_globals.current_time; 
+        if( t<200 )
+        {
+            set_single_behavior( pCell , "chemotactic sensitivity to quorum factor" , 0.001); 
+        }
+        else
+        {
+            set_single_behavior( pCell , "chemotactic sensitivity to quorum factor" , 0.0); 
+        }
+
+        set_single_behavior( pCell , "quorum factor secretion" , 100 ); 
+        set_single_behavior( pCell , "migration bias" , 1 ); 
+
+        phenotype.mechanics.attachment_rate = 0; 
+
+        Cell* pOther = pCell->state.attached_cells[0]; 
+        int n_other_attached = pOther->state.number_of_attached_cells(); 
+
+        // if I'm in a chain of at least 3
+        if( n_other_attached == 2 ) // && PhysiCell_globals.current_time > 10 )
+        {
+            phenotype.motility.migration_speed = 4; 
+        }
+        else
+        {
+            if( pCell < pOther )
+            {
+                phenotype.mechanics.attachment_rate = 0; 
+                set_single_behavior( pCell , "chemotactic sensitivity to quorum factor" , 1 ); 
+                set_single_behavior( pCell , "migration speed" , 2 ); 
+
+            }
+            else
+            {
+                phenotype.mechanics.attachment_rate = .1; 
+                set_single_behavior( pCell , "chemotactic sensitivity to quorum factor" , 1 ); 
+                set_single_behavior( pCell , "migration speed" , 2 ); 
+            }
+        }
+
+
+        return; 
+    }
+
+    if( pCell->state.attached_cells.size() == 2 )
+    {
+        set_single_behavior( pCell , "quorum factor secretion" , 0 ); 
+        set_single_behavior( pCell , "migration speed" , 0 ); 
+    }
+
+    return; 
+}
+
+void fiber_contact_function( Cell* pMe, Phenotype& phenoMe , Cell* pOther, Phenotype& phenoOther , double dt )
+{
+    // spring link 
+
+    standard_elastic_contact_function(pMe,phenoMe,pOther,phenoOther,dt); 
+
+    // angular spring calculations 
+    
+    return; 
+} 
+
+void rotating_migration_bias( Cell* pCell, Phenotype& phenotype , double dt )
+{
+    double t =  PhysiCell_globals.current_time; 
+    if( t > 200 && t < 400 )
+    {
+        set_single_behavior( pCell , "migration speed" , 0 ); 
+        set_single_behavior( pCell , "quorum factor secretion" , 10 ); 
+    }
+    else
+    {
+        double sp = get_single_base_behavior( pCell, "migration speed"); 
+        set_single_behavior( pCell , "migration speed" , sp ); 
+        set_single_behavior( pCell , "quorum factor secretion" , 0 );         
+    }
+
+    double x = pCell->position[0]; 
+    double y = pCell->position[1]; 
+    double radial = 0.0;
+    phenotype.motility.migration_bias_direction = { -y + radial*x , x + radial*y , 0} ; 
+    normalize ( &(phenotype.motility.migration_bias_direction) );  
+
+    return; 
+}
+>>>>>>> Stashed changes
