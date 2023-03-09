@@ -14,7 +14,7 @@
     </domain>
 
     <overall>
-        <max_time units="min">1200</max_time>
+        <max_time units="min">2400</max_time>
         <time_units>min</time_units>
         <space_units>micron</space_units>
         <dt_diffusion units="min">0.01</dt_diffusion>
@@ -23,7 +23,7 @@
     </overall>
 
     <parallel>
-        <omp_num_threads>1</omp_num_threads>
+        <omp_num_threads>3</omp_num_threads>
     </parallel>
 
     <save>
@@ -49,7 +49,7 @@
     <microenvironment_setup>
         <variable name="quorum factor" units="dimensionless" ID="0">
             <physical_parameter_set>
-                <diffusion_coefficient units="micron^2/min">100000.0</diffusion_coefficient>
+                <diffusion_coefficient units="micron^2/min">0.0</diffusion_coefficient>
                 <decay_rate units="1/min">10</decay_rate>
             </physical_parameter_set>
             <initial_condition units="mmHg">0</initial_condition>
@@ -127,7 +127,7 @@
                 </volume>
                 <mechanics>
                     <cell_cell_adhesion_strength units="micron/min">0.4</cell_cell_adhesion_strength>
-                    <cell_cell_repulsion_strength units="micron/min">10.0</cell_cell_repulsion_strength>
+                    <cell_cell_repulsion_strength units="micron/min">20.0</cell_cell_repulsion_strength>
                     <relative_maximum_adhesion_distance units="dimensionless">1.25</relative_maximum_adhesion_distance>
                     <cell_adhesion_affinities>
                         <cell_adhesion_affinity name="ECM">1</cell_adhesion_affinity>
@@ -144,9 +144,9 @@
                     <detachment_rate units="1/min">0.0</detachment_rate>
                 </mechanics>
                 <motility>
-                    <speed units="micron/min">2</speed>
+                    <speed units="micron/min">4</speed>
                     <persistence_time units="min">1</persistence_time>
-                    <migration_bias units="dimensionless">1</migration_bias>
+                    <migration_bias units="dimensionless">0</migration_bias>
                     <options>
                         <enabled>true</enabled>
                         <use_2D>true</use_2D>
@@ -156,7 +156,7 @@
                             <direction>1</direction>
                         </chemotaxis>
                         <advanced_chemotaxis>
-                            <enabled>true</enabled>
+                            <enabled>false</enabled>
                             <normalize_each_gradient>false</normalize_each_gradient>
                             <chemotactic_sensitivities>
                                 <chemotactic_sensitivity substrate="quorum factor">1</chemotactic_sensitivity>
@@ -200,8 +200,8 @@
                 </cell_transformations>
             </phenotype>
             <custom_data>
-                <preferred_angle conserved="false" units="radians" description="">0.7</preferred_angle>
-                <angular_spring_constant conserved="false" units="none" description="">1</angular_spring_constant>
+                <preferred_angle conserved="false" units="radians" description="">3.14</preferred_angle>
+                <angular_spring_constant conserved="false" units="none" description="">100</angular_spring_constant>
             </custom_data>
         </cell_definition>
         <cell_definition name="pusher" ID="1">
@@ -344,5 +344,9 @@
     <user_parameters>
         <random_seed type="int" units="dimensionless" description="">0</random_seed>
         <number_of_cells type="int" units="none" description="initial number of cells (for each cell type)">0</number_of_cells>
+        <attchementrate type="double" units="" description="">0.1</attchementrate>
+        <attchementaff type="double" units="" description="">1.5</attchementaff>
+        <detachrate type="double" units="" description="">0.05</detachrate>
+        <detachaff type="double" units="" description="">0</detachaff>
     </user_parameters>
 </PhysiCell_settings>

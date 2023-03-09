@@ -126,10 +126,10 @@ void create_cell_types( void )
 //    pCD->functions.update_migration_bias = rotating_migration_bias; 
     pCD->functions.contact_function = fiber_contact_function; 
 
-    pCD->phenotype.mechanics.maximum_number_of_attachments = 2; 
+    pCD->phenotype.mechanics.maximum_number_of_attachments = 3; 
     pCD->phenotype.mechanics.attachment_elastic_constant = 0.2; 
-    pCD->phenotype.mechanics.attachment_rate = .1; 
-    pCD->phenotype.mechanics.detachment_rate = 0; 
+    pCD->phenotype.mechanics.attachment_rate = parameters.doubles("attchementrate"); //.1; 
+    pCD->phenotype.mechanics.detachment_rate = parameters.doubles("detachrate"); //1e-6; 
 
     pCD = find_cell_definition( "pusher"); 
     if( pCD )
@@ -228,6 +228,8 @@ std::vector<std::string> my_coloring_function( Cell* pCell )
 
     if( n_attached == 2 )
     { out[0] = "blue"; }
+    if( n_attached == 3 )
+    { out[0] = "orange"; }
 
     out[2] = out[0]; 
     out[3] = out[0]; 
@@ -485,7 +487,18 @@ std::vector< std::vector<double> > compute_angular_force_contributions( Cell* pC
 void dynamic_spring_attachments( Cell* pCell , Phenotype& phenotype, double dt )
 {
     // check for detachments 
-    double detachment_probability = phenotype.mechanics.detachment_rate * dt; 
+    int number_of_attached_cells = pCell->state.number_of_attached_cells();
+    
+    double detachment_probability = 0.0; //= detachaff_number_of_attached_cells * phenotype.mechanics.detachment_rate * dt; 
+    
+    if (number_of_attached_cells ==1)
+        detachment_probability = phenotype.mechanics.detachment_rate * dt;
+    if (number_of_attached_cells ==2)
+        detachment_probability = 0;
+    if (number_of_attached_cells ==3)
+        detachment_probability = phenotype.mechanics.detachment_rate*2.0*dt;
+    //std::cout << "n = " << number_of_attached_cells << " -> " << detachment_probability << std::endl;
+
     for( int j=0; j < pCell->state.attached_cells.size(); j++ )
     {
         Cell* pTest = pCell->state.attached_cells[j]; 
@@ -498,7 +511,8 @@ void dynamic_spring_attachments( Cell* pCell , Phenotype& phenotype, double dt )
     { return; }
 
     // check for new attachments; 
-    double attachment_probability = phenotype.mechanics.attachment_rate * dt; 
+    double attachaff_number_of_attached_cells = pow(parameters.doubles("attchementaff") , static_cast<double>(pCell->state.number_of_attached_cells()));
+    double attachment_probability = ( 1.0 / (1.0 + attachaff_number_of_attached_cells )) * phenotype.mechanics.attachment_rate * dt; 
     bool done = false; 
     int j = 0; 
     while( done == false && j < pCell->state.neighbors.size() )
@@ -528,7 +542,7 @@ void fiber_custom_function( Cell* pCell, Phenotype& phenotype , double dt )
 {
     dynamic_spring_attachments(pCell, phenotype, dt ); 
 
-    if( pCell->state.number_of_attached_cells() >= 2 )
+    if( pCell->state.number_of_attached_cells() == 2 )
     {
         std::vector< std::vector<double> > forces = compute_angular_force_contributions(pCell,phenotype,dt); 
         Cell* pLeft = pCell->state.attached_cells[0];
@@ -543,67 +557,67 @@ void fiber_custom_function( Cell* pCell, Phenotype& phenotype , double dt )
         }
     }
 
-    if( PhysiCell_globals.current_time > 200 )
-    {
-        set_single_behavior( pCell , "migration speed" , 0); 
-        return; 
-    }
+//    if( PhysiCell_globals.current_time > 200 )
+//    {
+//        set_single_behavior( pCell , "migration speed" , 0); 
+//        return; 
+//    }
 
     // just test code from here on down. 
 
-    if( pCell->state.attached_cells.size() == 0 )
-    { 
-        set_single_behavior( pCell , "chemotactic sensitivity to quorum factor" , 1 );  
-        set_single_behavior( pCell , "migration speed" , 2 ); 
-
-        set_single_behavior( pCell , "quorum factor secretion" , 5 ); // 1
-
-        return; 
-    }
-
-    if( pCell->state.attached_cells.size() == 1 )
-    {
-        set_single_behavior( pCell , "chemotactic sensitivity to quorum factor" , -1 ); 
-
-        set_single_behavior( pCell , "quorum factor secretion" , 100 ); 
-        set_single_behavior( pCell , "migration bias" , 1 ); 
-
-        phenotype.mechanics.attachment_rate = 0; 
-
-        Cell* pOther = pCell->state.attached_cells[0]; 
-        int n_other_attached = pOther->state.number_of_attached_cells(); 
-
-        // if I'm in a chain of at least 3
-        if( n_other_attached == 2 ) // && PhysiCell_globals.current_time > 10 )
-        {
-            phenotype.motility.migration_speed = 4; 
-        }
-        else
-        {
-            if( pCell < pOther )
-            {
-                phenotype.mechanics.attachment_rate = 0; 
-                set_single_behavior( pCell , "chemotactic sensitivity to quorum factor" , 1 ); 
-                set_single_behavior( pCell , "migration speed" , 2 ); 
-
-            }
-            else
-            {
-                phenotype.mechanics.attachment_rate = .1; 
-                set_single_behavior( pCell , "chemotactic sensitivity to quorum factor" , 1 ); 
-                set_single_behavior( pCell , "migration speed" , 2 ); 
-            }
-        }
-
-
-        return; 
-    }
-
-    if( pCell->state.attached_cells.size() == 2 )
-    {
-        set_single_behavior( pCell , "quorum factor secretion" , 0 ); 
-        set_single_behavior( pCell , "migration speed" , 0 ); 
-    }
+//    if( pCell->state.attached_cells.size() == 0 )
+//    { 
+//        set_single_behavior( pCell , "chemotactic sensitivity to quorum factor" , 1 );  
+//        set_single_behavior( pCell , "migration speed" , 2 ); 
+//
+//        set_single_behavior( pCell , "quorum factor secretion" , 5 ); // 1
+//
+//        return; 
+//    }
+//
+//    if( pCell->state.attached_cells.size() == 1 )
+//    {
+//        set_single_behavior( pCell , "chemotactic sensitivity to quorum factor" , -1 ); 
+//
+//        set_single_behavior( pCell , "quorum factor secretion" , 100 ); 
+//        set_single_behavior( pCell , "migration bias" , 1 ); 
+//
+//        phenotype.mechanics.attachment_rate = 0; 
+//
+//        Cell* pOther = pCell->state.attached_cells[0]; 
+//        int n_other_attached = pOther->state.number_of_attached_cells(); 
+//
+//        // if I'm in a chain of at least 3
+//        if( n_other_attached == 2 ) // && PhysiCell_globals.current_time > 10 )
+//        {
+//            phenotype.motility.migration_speed = 4; 
+//        }
+//        else
+//        {
+//            if( pCell < pOther )
+//            {
+//                phenotype.mechanics.attachment_rate = 0; 
+//                set_single_behavior( pCell , "chemotactic sensitivity to quorum factor" , 1 ); 
+//                set_single_behavior( pCell , "migration speed" , 2 ); 
+//
+//            }
+//            else
+//            {
+//                phenotype.mechanics.attachment_rate = .1; 
+//                set_single_behavior( pCell , "chemotactic sensitivity to quorum factor" , 1 ); 
+//                set_single_behavior( pCell , "migration speed" , 2 ); 
+//            }
+//        }
+//
+//
+//        return; 
+//    }
+//
+//    if( pCell->state.attached_cells.size() == 2 )
+//    {
+//        set_single_behavior( pCell , "quorum factor secretion" , 0 ); 
+//        set_single_behavior( pCell , "migration speed" , 0 ); 
+//    }
 
     return; 
 }
