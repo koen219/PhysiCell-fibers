@@ -131,7 +131,7 @@
                     <relative_maximum_adhesion_distance units="dimensionless">1.25</relative_maximum_adhesion_distance>
                     <cell_adhesion_affinities>
                         <cell_adhesion_affinity name="ECM">1</cell_adhesion_affinity>
-                        <cell_adhesion_affinity name="pusher">0</cell_adhesion_affinity>
+                        <cell_adhesion_affinity name="pusher">1.0</cell_adhesion_affinity>
                     </cell_adhesion_affinities>
                     <options>
                         <set_relative_equilibrium_distance enabled="false" units="dimensionless">1.8</set_relative_equilibrium_distance>
@@ -144,9 +144,9 @@
                     <detachment_rate units="1/min">0.0</detachment_rate>
                 </mechanics>
                 <motility>
-                    <speed units="micron/min">2</speed>
+                    <speed units="micron/min">4</speed>
                     <persistence_time units="min">1</persistence_time>
-                    <migration_bias units="dimensionless">1</migration_bias>
+                    <migration_bias units="dimensionless">0.0</migration_bias>
                     <options>
                         <enabled>true</enabled>
                         <use_2D>true</use_2D>
@@ -156,7 +156,7 @@
                             <direction>1</direction>
                         </chemotaxis>
                         <advanced_chemotaxis>
-                            <enabled>true</enabled>
+                            <enabled>false</enabled>
                             <normalize_each_gradient>false</normalize_each_gradient>
                             <chemotactic_sensitivities>
                                 <chemotactic_sensitivity substrate="quorum factor">1</chemotactic_sensitivity>
@@ -178,17 +178,20 @@
                         <phagocytosis_rate name="ECM" units="1/min">0</phagocytosis_rate>
                         <phagocytosis_rate name="default" units="1/min">0</phagocytosis_rate>
                         <phagocytosis_rate name="pusher" units="1/min">0.0</phagocytosis_rate>
+                        <phagocytosis_rate name="cell" units="1/min">0</phagocytosis_rate>
                     </live_phagocytosis_rates>
                     <attack_rates>
                         <attack_rate name="ECM" units="1/min">0</attack_rate>
                         <attack_rate name="default" units="1/min">0</attack_rate>
                         <attack_rate name="pusher" units="1/min">0.0</attack_rate>
+                        <attack_rate name="cell" units="1/min">0</attack_rate>
                     </attack_rates>
                     <damage_rate units="1/min">1</damage_rate>
                     <fusion_rates>
                         <fusion_rate name="ECM" units="1/min">0</fusion_rate>
                         <fusion_rate name="default" units="1/min">0</fusion_rate>
                         <fusion_rate name="pusher" units="1/min">0.0</fusion_rate>
+                        <fusion_rate name="cell" units="1/min">0</fusion_rate>
                     </fusion_rates>
                 </cell_interactions>
                 <cell_transformations>
@@ -196,13 +199,14 @@
                         <transformation_rate name="ECM" units="1/min">0</transformation_rate>
                         <transformation_rate name="default" units="1/min">0</transformation_rate>
                         <transformation_rate name="pusher" units="1/min">0.0</transformation_rate>
+                        <transformation_rate name="cell" units="1/min">0</transformation_rate>
                     </transformation_rates>
                 </cell_transformations>
             </phenotype>
             <custom_data>
                 <preferred_angle conserved="false" units="radians" description="">3.14</preferred_angle>
                 <angular_spring_constant conserved="false" units="none" description="">10</angular_spring_constant>
-                <crosslink_attachment_rate conserved="false" units="" description="">0.001</crosslink_attachment_rate>
+                <crosslink_attachment_rate conserved="false" units="" description="">0.01</crosslink_attachment_rate>
                 <crosslink_detachment_rate conserved="false" units="" description="">0.0</crosslink_detachment_rate>
                 <crosslink_angular_spring_constant conserved="false" units="" description="">10</crosslink_angular_spring_constant>
                 <crosslink_preferred_angle conserved="false" units="" description="">1.57</crosslink_preferred_angle>
