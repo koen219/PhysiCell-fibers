@@ -222,16 +222,16 @@ FRAMERATE := 24
 OUTPUT := output
 
 jpeg: 
-	@magick identify -format "%h" $(OUTPUT)/initial.svg > __H.txt 
-	@magick identify -format "%w" $(OUTPUT)/initial.svg > __W.txt 
+	@magick identify -format "%h" $(OUTPUT)/initial.svg > __H.txt || identify -format "%h" $(OUTPUT)/initial.svg > __H.txt || echo "Error: Could not find ImageMagick on your system."
+	@magick identify -format "%w" $(OUTPUT)/initial.svg > __W.txt || identify -format "%w" $(OUTPUT)/initial.svg > __W.txt || echo "Error: Could not find ImageMagick on your system."
 	@expr 2 \* \( $$(grep . __H.txt) / 2 \) > __H1.txt 
 	@expr 2 \* \( $$(grep . __W.txt) / 2 \) > __W1.txt 
 	@echo "$$(grep . __W1.txt)!x$$(grep . __H1.txt)!" > __resize.txt 
-	@magick mogrify -format jpg -resize $$(grep . __resize.txt) $(OUTPUT)/s*.svg
+	@magick mogrify -format jpg -resize $$(grep . __resize.txt) $(OUTPUT)/s*.svg || mogrify -format jpg -resize $$(grep . __resize.txt) $(OUTPUT)/s*.svg || echo "Error: Could not find ImageMagick on your system."
 	rm -f __H*.txt __W*.txt __resize.txt 
 	
 gif: 
-	magick convert $(OUTPUT)/s*.svg $(OUTPUT)/out.gif 
+	magick convert $(OUTPUT)/s*.svg $(OUTPUT)/out.gif || convert $(OUTPUT)/s*.svg $(OUTPUT)/out.gif || echo "Error: ImageMagick error."
 	 
 movie:
 	ffmpeg -r $(FRAMERATE) -f image2 -i $(OUTPUT)/snapshot%08d.jpg -vcodec libx264 -pix_fmt yuv420p -strict -2 -tune animation -crf 15 -acodec none $(OUTPUT)/out.mp4
