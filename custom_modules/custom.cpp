@@ -131,7 +131,7 @@ void create_cell_types( void )
     pCD->phenotype.mechanics.attachment_rate = parameters.doubles("attach_rate");
     pCD->phenotype.mechanics.detachment_rate = parameters.doubles("detach_rate");
 
-    pCD->phenotype.mechanics.cell_BM_repulsion_strength = 100;  // scales the repulsion to the boundary
+    pCD->phenotype.mechanics.cell_BM_repulsion_strength = 1000;  // scales the repulsion to the boundary
 
     pCD = find_cell_definition( "pusher"); 
     if( pCD )

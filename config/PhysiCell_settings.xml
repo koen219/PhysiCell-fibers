@@ -13,7 +13,7 @@
 	</domain>
 	
 	<overall>
-		<max_time units="min">1000</max_time> 
+		<max_time units="min">100</max_time> 
 		<time_units>min</time_units>
 		<space_units>micron</space_units>
 	
@@ -135,15 +135,15 @@
           </volume>
 
           <mechanics>
-            <cell_cell_adhesion_strength units="micron/min">0.4</cell_cell_adhesion_strength>
+            <cell_cell_adhesion_strength units="micron/min">0.01</cell_cell_adhesion_strength>
             <cell_cell_repulsion_strength units="micron/min">20.0</cell_cell_repulsion_strength>
-            <relative_maximum_adhesion_distance units="dimensionless">1.25</relative_maximum_adhesion_distance>
+            <relative_maximum_adhesion_distance units="dimensionless">1</relative_maximum_adhesion_distance>
             <cell_adhesion_affinities>
                 <cell_adhesion_affinity name="ECM">1</cell_adhesion_affinity>
                 <cell_adhesion_affinity name="pusher">1.0</cell_adhesion_affinity>
                 </cell_adhesion_affinities>
             <options>
-              <set_relative_equilibrium_distance enabled="false" units="dimensionless">1.8</set_relative_equilibrium_distance>
+              <set_relative_equilibrium_distance enabled="false" units="dimensionless">5</set_relative_equilibrium_distance>
               <set_absolute_equilibrium_distance enabled="false" units="micron">15.12</set_absolute_equilibrium_distance>
             </options>
             <cell_BM_adhesion_strength units="micron/min">4.0</cell_BM_adhesion_strength>
@@ -154,7 +154,7 @@
           </mechanics>
 
           <motility>
-            <speed units="micron/min">2</speed>
+            <speed units="micron/min">1</speed>
             <persistence_time units="min">1</persistence_time>
             <migration_bias units="dimensionless">0</migration_bias>
             <options>
@@ -218,7 +218,7 @@
           </phenotype>
         <custom_data>
           <preferred_angle conserved="false" units="radians" description="">3.14</preferred_angle>
-          <angular_spring_constant conserved="false" units="none" description="">10</angular_spring_constant>
+          <angular_spring_constant conserved="false" units="none" description="">1</angular_spring_constant>
         </custom_data>
       </cell_definition>
 
@@ -374,10 +374,10 @@
 	<user_parameters>
 		<random_seed type="int" units="dimensionless" description="">0</random_seed>
         <number_of_cells type="int" units="none" description="initial number of cells (for each cell type)">0</number_of_cells>
-        <attach_rate type="double" units="" description="">1</attach_rate>
+        <attach_rate type="double" units="" description="">10</attach_rate>
         <detach_rate type="double" units="" description="">1</detach_rate>
         <linear_spring_constant type="double" units="" description="">0.1</linear_spring_constant>
-        <max_attach type="int" units="" description="">3</max_attach>
+        <max_attach type="int" units="" description="">5</max_attach>
     </user_parameters>
 	
 </PhysiCell_settings>
