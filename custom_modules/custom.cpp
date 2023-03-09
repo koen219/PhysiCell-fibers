@@ -120,7 +120,21 @@ void create_cell_types( void )
 	cell_defaults.functions.update_phenotype = phenotype_function; 
 	cell_defaults.functions.custom_cell_rule = custom_function; 
 	cell_defaults.functions.contact_function = contact_function; 
-	
+
+    Cell_Definition* pCD = find_cell_definition( "ECM"); 
+    pCD->functions.custom_cell_rule = fiber_custom_function; 
+//    pCD->functions.update_migration_bias = rotating_migration_bias; 
+    pCD->functions.contact_function = fiber_contact_function; 
+
+    pCD->phenotype.mechanics.maximum_number_of_attachments = 2; 
+    pCD->phenotype.mechanics.attachment_elastic_constant = 0.2; 
+    pCD->phenotype.mechanics.attachment_rate = .1; 
+    pCD->phenotype.mechanics.detachment_rate = 0; 
+
+    pCD = find_cell_definition( "pusher"); 
+    if( pCD )
+    { pCD->functions.update_migration_bias = rotating_migration_bias;}
+
 	/*
 	   This builds the map of cell definitions and summarizes the setup. 
 	*/
@@ -192,7 +206,34 @@ void setup_tissue( void )
 }
 
 std::vector<std::string> my_coloring_function( Cell* pCell )
-{ return paint_by_number_cell_coloring(pCell); }
+{
+    
+    std::vector<std::string> out = paint_by_number_cell_coloring(pCell); 
+
+    if( pCell->type_name == "pusher" )
+    {
+        out[0] = "orange"; 
+        out[2] = "orange";
+        out[3] = "orange";
+        return out; 
+    }
+    
+    int n_attached= pCell->state.number_of_attached_cells(); 
+
+    if( n_attached == 0 )
+    { out[0] = "grey"; }
+
+    if( n_attached == 1 )
+    { out[0] = "red"; }
+
+    if( n_attached == 2 )
+    { out[0] = "blue"; }
+
+    out[2] = out[0]; 
+    out[3] = out[0]; 
+
+    return out; 
+}
 
 void phenotype_function( Cell* pCell, Phenotype& phenotype, double dt )
 { return; }
@@ -203,6 +244,7 @@ void custom_function( Cell* pCell, Phenotype& phenotype , double dt )
 void contact_function( Cell* pMe, Phenotype& phenoMe , Cell* pOther, Phenotype& phenoOther , double dt )
 { return; } 
 
+/*
 #include <cmath>
 struct Point {
     double x;
@@ -264,6 +306,7 @@ Point getAngularHarmonicForce_Monasse(Point A, Point B, Point C, double k, doubl
     return Point(F_a, F_b, F_c)
 
 }
+*/
 
 /*
  * import numpy as np
@@ -331,9 +374,8 @@ def getAngularHarmonicForce_Monasse(A, B, C, k, theta0):
     return(F_a, F_b, F_c)
  */
 
+// std::vector<Point> getAngularHarmonicForce_Monasse(Point A, Point B, Point C, double k, double theta0); 
 
-<<<<<<< Updated upstream
-=======
 /* Force calculation based on:
 	Monasse, Bernard, and Frédéric Boussinot. 
     "Determination of forces from a potential in molecular dynamics." 
@@ -501,7 +543,7 @@ void fiber_custom_function( Cell* pCell, Phenotype& phenotype , double dt )
         }
     }
 
-    if( PhysiCell_globals.current_time > 9e99 )
+    if( PhysiCell_globals.current_time > 200 )
     {
         set_single_behavior( pCell , "migration speed" , 0); 
         return; 
@@ -521,15 +563,7 @@ void fiber_custom_function( Cell* pCell, Phenotype& phenotype , double dt )
 
     if( pCell->state.attached_cells.size() == 1 )
     {
-        double t =  PhysiCell_globals.current_time; 
-        if( t<200 )
-        {
-            set_single_behavior( pCell , "chemotactic sensitivity to quorum factor" , 0.001); 
-        }
-        else
-        {
-            set_single_behavior( pCell , "chemotactic sensitivity to quorum factor" , 0.0); 
-        }
+        set_single_behavior( pCell , "chemotactic sensitivity to quorum factor" , -1 ); 
 
         set_single_behavior( pCell , "quorum factor secretion" , 100 ); 
         set_single_behavior( pCell , "migration bias" , 1 ); 
@@ -608,4 +642,3 @@ void rotating_migration_bias( Cell* pCell, Phenotype& phenotype , double dt )
 
     return; 
 }
->>>>>>> Stashed changes
