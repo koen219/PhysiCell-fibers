@@ -3847,3 +3847,1195 @@ DEBUG:root:--------- found //user_parameters
 DEBUG:root:random_seed
 DEBUG:root:number_of_cells
 DEBUG:root:found 2
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_xmin,xmax=  (-500.0, 500.0)
+DEBUG:root:ics_tab.py: -------- ICs: reset_plot_range(): plot_ymin,ymax=  (-500.0, 500.0)
+DEBUG:root:ics_tab.py: volume= 2494.0, radius= 8.412710547954228
+DEBUG:root:----------- microenv_tab.py: fill_xml(): ----------
+DEBUG:root:microenv_tab.py: fill_xml(): num subtrates = 1
+DEBUG:root:substrates_in_tree =['quorum factor']
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = substrate
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = gradients
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = track_in_agents
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = quorum factor
+DEBUG:root:matched! quorum factor
+DEBUG:root:
+
+----------- cell_def_tab.py: fill_xml(): ----------
+DEBUG:root:num cell defs = 2
+DEBUG:root:cdefs_in_tree =['ECM', 'pusher']
+DEBUG:root:
+--- key in param_d.keys() = ECM
+DEBUG:root:matched! ECM
+DEBUG:root:--- cell_adhesion_affinity= {'ECM': '1', 'pusher': '1.0'}
+DEBUG:root:ECM  --> 1
+DEBUG:root:pusher  --> 1.0
+DEBUG:root:
+
+ ====================> fill_xml_motility(): quorum factor = quorum factor 
+
+
+DEBUG:root:fill_xml_motility(): {'quorum factor': '1'}
+DEBUG:root:quorum factor  --> 1
+DEBUG:root:self.substrate_list = ['quorum factor']
+DEBUG:root:substrate = quorum factor
+DEBUG:root:------------------- fill_xml_interactions():  cdef= ECM
+DEBUG:root:--- live_phagocytosis_rate= {'ECM': '0', 'default': '0', 'pusher': '0.0', '': '0.0'}
+DEBUG:root:  key in live_phagocytosis_rate= ECM
+DEBUG:root:ECM  --> 0
+DEBUG:root:  key in live_phagocytosis_rate= default
+DEBUG:root:default  --> 0
+DEBUG:root:  key in live_phagocytosis_rate= pusher
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:  key in live_phagocytosis_rate= 
+DEBUG:root:--- attack_rate= {'ECM': '0', 'default': '0', 'pusher': '0.0', '': '0.0'}
+DEBUG:root:ECM  --> 0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:--- fusion_rate= {'ECM': '0', 'default': '0', 'pusher': '0.0', '': '0.0'}
+DEBUG:root:ECM  --> 0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:ECM  --> 0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:------------------- fill_xml_intracellular()
+DEBUG:root:------ ["intracellular"]: for ECM
+DEBUG:root:None
+DEBUG:root:
+
+DEBUG:root:------ ["custom_data"]: for ECM
+DEBUG:root:
+
+DEBUG:root:
+--- key in param_d.keys() = pusher
+DEBUG:root:matched! pusher
+DEBUG:root:--- cell_adhesion_affinity= {'ECM': '0.0', 'pusher': '1.0'}
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:pusher  --> 1.0
+DEBUG:root:
+
+ ====================> fill_xml_motility(): quorum factor = quorum factor 
+
+
+DEBUG:root:fill_xml_motility(): {'quorum factor': '0.0'}
+DEBUG:root:quorum factor  --> 0.0
+DEBUG:root:self.substrate_list = ['quorum factor']
+DEBUG:root:substrate = quorum factor
+DEBUG:root:------------------- fill_xml_interactions():  cdef= pusher
+DEBUG:root:--- live_phagocytosis_rate= {'ECM': '0.0', 'default': '0', 'pusher': '0.0'}
+DEBUG:root:  key in live_phagocytosis_rate= ECM
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:  key in live_phagocytosis_rate= default
+DEBUG:root:default  --> 0
+DEBUG:root:  key in live_phagocytosis_rate= pusher
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:--- attack_rate= {'ECM': '0.0', 'default': '0', 'pusher': '0.0'}
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:--- fusion_rate= {'ECM': '0.0', 'default': '0', 'pusher': '0.0'}
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:default  --> 0
+DEBUG:root:------------------- fill_xml_intracellular()
+DEBUG:root:------ ["intracellular"]: for pusher
+DEBUG:root:None
+DEBUG:root:
+
+DEBUG:root:------ ["custom_data"]: for pusher
+DEBUG:root:
+
+DEBUG:root:----------- end cell_def_tab.py: fill_xml(): ----------
+DEBUG:root:
+--------- user_params_tab.py:  fill_xml(): self.count = 125
+DEBUG:root:--------- found //user_parameters
+DEBUG:root:random_seed
+DEBUG:root:number_of_cells
+DEBUG:root:found 2
+DEBUG:root:===========  run_model_cb():  ============
+DEBUG:root:run_tab.py:  doing: mkdir output
+DEBUG:root:
+ ========================== run_tab.py: update_xml_from_gui(): self.xml_root = <Element 'PhysiCell_settings' at 0x15e20c7c0>
+DEBUG:root:----------- microenv_tab.py: fill_xml(): ----------
+DEBUG:root:microenv_tab.py: fill_xml(): num subtrates = 1
+DEBUG:root:substrates_in_tree =['quorum factor']
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = substrate
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = gradients
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = track_in_agents
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = quorum factor
+DEBUG:root:matched! quorum factor
+DEBUG:root:
+
+----------- cell_def_tab.py: fill_xml(): ----------
+DEBUG:root:num cell defs = 2
+DEBUG:root:cdefs_in_tree =['ECM', 'pusher']
+DEBUG:root:
+--- key in param_d.keys() = ECM
+DEBUG:root:matched! ECM
+DEBUG:root:--- cell_adhesion_affinity= {'ECM': '1', 'pusher': '1.0'}
+DEBUG:root:ECM  --> 1
+DEBUG:root:pusher  --> 1.0
+DEBUG:root:
+
+ ====================> fill_xml_motility(): quorum factor = quorum factor 
+
+
+DEBUG:root:fill_xml_motility(): {'quorum factor': '1'}
+DEBUG:root:quorum factor  --> 1
+DEBUG:root:self.substrate_list = ['quorum factor']
+DEBUG:root:substrate = quorum factor
+DEBUG:root:------------------- fill_xml_interactions():  cdef= ECM
+DEBUG:root:--- live_phagocytosis_rate= {'ECM': '0', 'default': '0', 'pusher': '0.0', '': '0.0'}
+DEBUG:root:  key in live_phagocytosis_rate= ECM
+DEBUG:root:ECM  --> 0
+DEBUG:root:  key in live_phagocytosis_rate= default
+DEBUG:root:default  --> 0
+DEBUG:root:  key in live_phagocytosis_rate= pusher
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:  key in live_phagocytosis_rate= 
+DEBUG:root:--- attack_rate= {'ECM': '0', 'default': '0', 'pusher': '0.0', '': '0.0'}
+DEBUG:root:ECM  --> 0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:--- fusion_rate= {'ECM': '0', 'default': '0', 'pusher': '0.0', '': '0.0'}
+DEBUG:root:ECM  --> 0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:ECM  --> 0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:------------------- fill_xml_intracellular()
+DEBUG:root:------ ["intracellular"]: for ECM
+DEBUG:root:None
+DEBUG:root:
+
+DEBUG:root:------ ["custom_data"]: for ECM
+DEBUG:root:
+
+DEBUG:root:
+--- key in param_d.keys() = pusher
+DEBUG:root:matched! pusher
+DEBUG:root:--- cell_adhesion_affinity= {'ECM': '0.0', 'pusher': '1.0'}
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:pusher  --> 1.0
+DEBUG:root:
+
+ ====================> fill_xml_motility(): quorum factor = quorum factor 
+
+
+DEBUG:root:fill_xml_motility(): {'quorum factor': '0.0'}
+DEBUG:root:quorum factor  --> 0.0
+DEBUG:root:self.substrate_list = ['quorum factor']
+DEBUG:root:substrate = quorum factor
+DEBUG:root:------------------- fill_xml_interactions():  cdef= pusher
+DEBUG:root:--- live_phagocytosis_rate= {'ECM': '0.0', 'default': '0', 'pusher': '0.0'}
+DEBUG:root:  key in live_phagocytosis_rate= ECM
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:  key in live_phagocytosis_rate= default
+DEBUG:root:default  --> 0
+DEBUG:root:  key in live_phagocytosis_rate= pusher
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:--- attack_rate= {'ECM': '0.0', 'default': '0', 'pusher': '0.0'}
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:--- fusion_rate= {'ECM': '0.0', 'default': '0', 'pusher': '0.0'}
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:default  --> 0
+DEBUG:root:------------------- fill_xml_intracellular()
+DEBUG:root:------ ["intracellular"]: for pusher
+DEBUG:root:None
+DEBUG:root:
+
+DEBUG:root:------ ["custom_data"]: for pusher
+DEBUG:root:
+
+DEBUG:root:----------- end cell_def_tab.py: fill_xml(): ----------
+DEBUG:root:
+--------- user_params_tab.py:  fill_xml(): self.count = 125
+DEBUG:root:--------- found //user_parameters
+DEBUG:root:random_seed
+DEBUG:root:number_of_cells
+DEBUG:root:found 2
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16aaba7f0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x165f05880>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16687e850>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16ab32520>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16aa0feb0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16c320460>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x1666bb520>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16aab3610>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x177bd9c70>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16687d040>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x177bf7df0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16aaacf10>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x166992130>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x166937970>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x1658c2280>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x1669abd00>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16686cb50>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16abfbc70>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16a6c3ca0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16abd2f70>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16ab32eb0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16aa5d8b0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16aa5deb0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16693d790>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x1668b93a0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16abd2eb0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16ac320a0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x15e23cee0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16a6360d0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16abe72e0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x166854460>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x166922430>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x1669273a0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16aa46b50>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16aacbfd0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x177bf1a60>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16a6cc850>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x1669669d0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16ab16430>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x166028040>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16a62a130>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16aa47a90>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16ac0d940>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16abd5370>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x165f7e6a0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x177f0ec40>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16c322700>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16abd2f10>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x165f86700>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x1669358e0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x177c22460>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16abd28b0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16abdf3a0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16aa567f0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16ab7a640>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16aacbbe0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16aa433d0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16a654b20>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x165fe2820>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16ac07b20>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16ab0dac0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16c308e20>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16ac32040>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x165a408b0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16aa60b80>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x1669e56d0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x166996670>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x15e2187c0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16aa5d760>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x166835340>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16ab32ac0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x1668e54f0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16c322c10>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16a6366a0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16aa56dc0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x165f8daf0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x165f05670>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16ab0dac0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16a63e640>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x177bd4730>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16abc36d0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16c338ac0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x1669703a0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16abe7580>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16a62aca0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x177c41460>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16ab0d760>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16a6c59d0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x1666a7d30>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16aaebeb0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16ac32130>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16c33aa30>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16aaeb130>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x1669353d0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16aa56370>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x1668c2070>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x1668679a0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16a6c5a30>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16c376dc0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x165a40100>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16abbbfa0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16abd9160>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16ab41ac0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16ac32850>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x1669ae520>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16a652700>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16a6c51c0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16c33adf0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16603daf0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x166954c70>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x1668e6ac0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x166a27d30>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x1668cb070>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x1669706d0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16aa954f0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x166857070>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16a63e730>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x166867d30>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16c3768e0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16aa961f0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16aabbcd0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16a6ccb20>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16c342d60>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16aaf9970>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16aaf7e80>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16692ae20>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x166895160>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16c320790>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x165fff0d0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x166a1a1c0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16abd2640>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x165a33df0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16a6c3dc0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16a6bd280>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x165ffcca0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16aa56970>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x1658c23a0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16abd5bb0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x1668cbe80>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16c33a670>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x177c1a970>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x165af67c0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x166902700>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16abd5f10>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x1668f2a60>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16ab41790>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16aafa8e0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x1669d9b80>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16abec460>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x165f86490>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16aabb190>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16aa46670>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16c33a970>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x15e23ce50>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16ab2cd30>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16aabb0d0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16a63e3d0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16c33c6d0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x1669ab5e0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x166867d90>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x1668e2a00>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16abf89d0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16c342e80>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16c308f70>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16ac32910>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16c33cb20>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16aacb6a0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x177bf7550>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x165ade0a0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16a62a7c0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x165ff5370>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x166978250>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16aa46670>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16a66dd60>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16a667310>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16abf6520>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16abd6a00>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x165af6160>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16ac075b0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x165ff5430>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16aa60f70>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16aa8ad90>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x1668faa00>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16c342a00>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x177c14eb0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x1668e3520>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16c304f70>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16c304af0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x177c14610>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x177c12040>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16a67f640>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x177c28c10>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16abe57f0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16c322a60>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x165a403d0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16ab20070>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x165f4e730>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x1669041f0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16a6bd5b0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x165f869a0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16ab7a610>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16c31f280>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16ac32460>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x1669b2820>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x1668c7730>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16abd2f40>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16abd51f0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16aa43610>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16c33afa0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x165f4e850>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x1669f9190>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x1669d9280>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16a6c3550>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x1668d3dc0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16c308700>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x165f4e760>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16aa43610>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x1666cc730>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16ac0d2b0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16aaebf40>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16aa60dc0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x1666ade20>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x166945f10>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16aaebc40>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x166692280>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16a636190>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x1666929d0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16abff730>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x166941e20>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16aabac10>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16ab28eb0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16aa43760>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16ab41640>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16a6bf7f0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x177c2be20>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16aa093d0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x1666b4220>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16a6c3460>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16aa87670>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x165f0f8b0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x165fcee80>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x165f8d0d0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16aa5d790>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16695e7f0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16abfb520>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16696f490>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x177bf76d0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16a6cc0a0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16ab28190>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16a66dbe0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x1666b4790>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x1669314f0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16aa60850>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x1668a2460>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16abff910>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16ab7a9d0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x177f0c5b0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16a6496d0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x165fe2d90>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x1669046a0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16aa87d00>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x165fe2970>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x1668b9af0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16aafad30>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16aabaa90>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16abe7d90>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16693b940>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x1669c8730>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16abd58e0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x165a40b80>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16ac07eb0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16c3764f0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x1668d26d0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16a649790>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16c338c70>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x165aded60>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x165ade3d0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16a63e9d0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x1666b4b20>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x165fe2af0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x166697160>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x1669dc0d0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16aaba4f0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16c376130>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16a6544f0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16ab32610>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x1668e3610>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x166901670>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16abfbd00>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x1669a5c40>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16a654a90>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x165f8d0a0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16c320160>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x165ff0f10>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x165a406d0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x165fe23a0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x15e232a90>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x177f01d90>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16abe6490>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16689d370>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x165f74310>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16aa6bbe0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16c308f70>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16c342250>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16a63baf0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x1668d5d90>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16a66d880>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16ac002b0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16a63e490>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16aa47b20>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x1668993a0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16aacbbe0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16aafc4f0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x1666c7340>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x166870610>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x166a21430>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x166692910>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x1666ad850>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16686d5b0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16aacbfd0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x165a40e80>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16aafad90>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x166902580>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16a66b1c0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16a67caf0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16a66bdc0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16ab326d0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x1669a5400>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16aa43c70>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x165ff5fa0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16a636760>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16c3201c0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16a6c3190>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x165af6f40>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16aaba340>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x165ade640>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x165ade9d0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x166a1fa00>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x1666b3f10>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16a6873d0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x1669dcb50>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x15e23c340>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16abe7910>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16a6ccfa0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x165a401f0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x177bc5bb0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16ab146d0>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x16a649400>
+DEBUG:matplotlib.colorbar:locator: <matplotlib.ticker.AutoLocator object at 0x177f0cdc0>
+DEBUG:root:----------- microenv_tab.py: fill_xml(): ----------
+DEBUG:root:microenv_tab.py: fill_xml(): num subtrates = 1
+DEBUG:root:substrates_in_tree =['quorum factor']
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = substrate
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = gradients
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = track_in_agents
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = quorum factor
+DEBUG:root:matched! quorum factor
+DEBUG:root:
+
+----------- cell_def_tab.py: fill_xml(): ----------
+DEBUG:root:num cell defs = 2
+DEBUG:root:cdefs_in_tree =['ECM', 'pusher']
+DEBUG:root:
+--- key in param_d.keys() = ECM
+DEBUG:root:matched! ECM
+DEBUG:root:--- cell_adhesion_affinity= {'ECM': '1', 'pusher': '1.0'}
+DEBUG:root:ECM  --> 1
+DEBUG:root:pusher  --> 1.0
+DEBUG:root:
+
+ ====================> fill_xml_motility(): quorum factor = quorum factor 
+
+
+DEBUG:root:fill_xml_motility(): {'quorum factor': '1'}
+DEBUG:root:quorum factor  --> 1
+DEBUG:root:self.substrate_list = ['quorum factor']
+DEBUG:root:substrate = quorum factor
+DEBUG:root:------------------- fill_xml_interactions():  cdef= ECM
+DEBUG:root:--- live_phagocytosis_rate= {'ECM': '0', 'default': '0', 'pusher': '0.0', '': '0.0'}
+DEBUG:root:  key in live_phagocytosis_rate= ECM
+DEBUG:root:ECM  --> 0
+DEBUG:root:  key in live_phagocytosis_rate= default
+DEBUG:root:default  --> 0
+DEBUG:root:  key in live_phagocytosis_rate= pusher
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:  key in live_phagocytosis_rate= 
+DEBUG:root:--- attack_rate= {'ECM': '0', 'default': '0', 'pusher': '0.0', '': '0.0'}
+DEBUG:root:ECM  --> 0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:--- fusion_rate= {'ECM': '0', 'default': '0', 'pusher': '0.0', '': '0.0'}
+DEBUG:root:ECM  --> 0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:ECM  --> 0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:------------------- fill_xml_intracellular()
+DEBUG:root:------ ["intracellular"]: for ECM
+DEBUG:root:None
+DEBUG:root:
+
+DEBUG:root:------ ["custom_data"]: for ECM
+DEBUG:root:
+
+DEBUG:root:
+--- key in param_d.keys() = pusher
+DEBUG:root:matched! pusher
+DEBUG:root:--- cell_adhesion_affinity= {'ECM': '0.0', 'pusher': '1.0'}
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:pusher  --> 1.0
+DEBUG:root:
+
+ ====================> fill_xml_motility(): quorum factor = quorum factor 
+
+
+DEBUG:root:fill_xml_motility(): {'quorum factor': '0.0'}
+DEBUG:root:quorum factor  --> 0.0
+DEBUG:root:self.substrate_list = ['quorum factor']
+DEBUG:root:substrate = quorum factor
+DEBUG:root:------------------- fill_xml_interactions():  cdef= pusher
+DEBUG:root:--- live_phagocytosis_rate= {'ECM': '0.0', 'default': '0', 'pusher': '0.0'}
+DEBUG:root:  key in live_phagocytosis_rate= ECM
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:  key in live_phagocytosis_rate= default
+DEBUG:root:default  --> 0
+DEBUG:root:  key in live_phagocytosis_rate= pusher
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:--- attack_rate= {'ECM': '0.0', 'default': '0', 'pusher': '0.0'}
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:--- fusion_rate= {'ECM': '0.0', 'default': '0', 'pusher': '0.0'}
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:default  --> 0
+DEBUG:root:------------------- fill_xml_intracellular()
+DEBUG:root:------ ["intracellular"]: for pusher
+DEBUG:root:None
+DEBUG:root:
+
+DEBUG:root:------ ["custom_data"]: for pusher
+DEBUG:root:
+
+DEBUG:root:----------- end cell_def_tab.py: fill_xml(): ----------
+DEBUG:root:
+--------- user_params_tab.py:  fill_xml(): self.count = 125
+DEBUG:root:--------- found //user_parameters
+DEBUG:root:random_seed
+DEBUG:root:number_of_cells
+DEBUG:root:found 2
+DEBUG:root:----------- microenv_tab.py: fill_xml(): ----------
+DEBUG:root:microenv_tab.py: fill_xml(): num subtrates = 1
+DEBUG:root:substrates_in_tree =['quorum factor']
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = substrate
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = gradients
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = track_in_agents
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = quorum factor
+DEBUG:root:matched! quorum factor
+DEBUG:root:
+
+----------- cell_def_tab.py: fill_xml(): ----------
+DEBUG:root:num cell defs = 2
+DEBUG:root:cdefs_in_tree =['ECM', 'pusher']
+DEBUG:root:
+--- key in param_d.keys() = ECM
+DEBUG:root:matched! ECM
+DEBUG:root:--- cell_adhesion_affinity= {'ECM': '1', 'pusher': '1.0'}
+DEBUG:root:ECM  --> 1
+DEBUG:root:pusher  --> 1.0
+DEBUG:root:
+
+ ====================> fill_xml_motility(): quorum factor = quorum factor 
+
+
+DEBUG:root:fill_xml_motility(): {'quorum factor': '1'}
+DEBUG:root:quorum factor  --> 1
+DEBUG:root:self.substrate_list = ['quorum factor']
+DEBUG:root:substrate = quorum factor
+DEBUG:root:------------------- fill_xml_interactions():  cdef= ECM
+DEBUG:root:--- live_phagocytosis_rate= {'ECM': '0', 'default': '0', 'pusher': '0.0', '': '0.0'}
+DEBUG:root:  key in live_phagocytosis_rate= ECM
+DEBUG:root:ECM  --> 0
+DEBUG:root:  key in live_phagocytosis_rate= default
+DEBUG:root:default  --> 0
+DEBUG:root:  key in live_phagocytosis_rate= pusher
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:  key in live_phagocytosis_rate= 
+DEBUG:root:--- attack_rate= {'ECM': '0', 'default': '0', 'pusher': '0.0', '': '0.0'}
+DEBUG:root:ECM  --> 0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:--- fusion_rate= {'ECM': '0', 'default': '0', 'pusher': '0.0', '': '0.0'}
+DEBUG:root:ECM  --> 0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:ECM  --> 0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:------------------- fill_xml_intracellular()
+DEBUG:root:------ ["intracellular"]: for ECM
+DEBUG:root:None
+DEBUG:root:
+
+DEBUG:root:------ ["custom_data"]: for ECM
+DEBUG:root:
+
+DEBUG:root:
+--- key in param_d.keys() = pusher
+DEBUG:root:matched! pusher
+DEBUG:root:--- cell_adhesion_affinity= {'ECM': '0.0', 'pusher': '1.0'}
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:pusher  --> 1.0
+DEBUG:root:
+
+ ====================> fill_xml_motility(): quorum factor = quorum factor 
+
+
+DEBUG:root:fill_xml_motility(): {'quorum factor': '0.0'}
+DEBUG:root:quorum factor  --> 0.0
+DEBUG:root:self.substrate_list = ['quorum factor']
+DEBUG:root:substrate = quorum factor
+DEBUG:root:------------------- fill_xml_interactions():  cdef= pusher
+DEBUG:root:--- live_phagocytosis_rate= {'ECM': '0.0', 'default': '0', 'pusher': '0.0'}
+DEBUG:root:  key in live_phagocytosis_rate= ECM
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:  key in live_phagocytosis_rate= default
+DEBUG:root:default  --> 0
+DEBUG:root:  key in live_phagocytosis_rate= pusher
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:--- attack_rate= {'ECM': '0.0', 'default': '0', 'pusher': '0.0'}
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:--- fusion_rate= {'ECM': '0.0', 'default': '0', 'pusher': '0.0'}
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:default  --> 0
+DEBUG:root:------------------- fill_xml_intracellular()
+DEBUG:root:------ ["intracellular"]: for pusher
+DEBUG:root:None
+DEBUG:root:
+
+DEBUG:root:------ ["custom_data"]: for pusher
+DEBUG:root:
+
+DEBUG:root:----------- end cell_def_tab.py: fill_xml(): ----------
+DEBUG:root:
+--------- user_params_tab.py:  fill_xml(): self.count = 125
+DEBUG:root:--------- found //user_parameters
+DEBUG:root:random_seed
+DEBUG:root:number_of_cells
+DEBUG:root:found 2
+DEBUG:root:===========  run_model_cb():  ============
+DEBUG:root:run_tab.py:  doing: mkdir output
+DEBUG:root:
+ ========================== run_tab.py: update_xml_from_gui(): self.xml_root = <Element 'PhysiCell_settings' at 0x15e20c7c0>
+DEBUG:root:----------- microenv_tab.py: fill_xml(): ----------
+DEBUG:root:microenv_tab.py: fill_xml(): num subtrates = 1
+DEBUG:root:substrates_in_tree =['quorum factor']
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = substrate
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = gradients
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = track_in_agents
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = quorum factor
+DEBUG:root:matched! quorum factor
+DEBUG:root:
+
+----------- cell_def_tab.py: fill_xml(): ----------
+DEBUG:root:num cell defs = 2
+DEBUG:root:cdefs_in_tree =['ECM', 'pusher']
+DEBUG:root:
+--- key in param_d.keys() = ECM
+DEBUG:root:matched! ECM
+DEBUG:root:--- cell_adhesion_affinity= {'ECM': '1', 'pusher': '1.0'}
+DEBUG:root:ECM  --> 1
+DEBUG:root:pusher  --> 1.0
+DEBUG:root:
+
+ ====================> fill_xml_motility(): quorum factor = quorum factor 
+
+
+DEBUG:root:fill_xml_motility(): {'quorum factor': '1'}
+DEBUG:root:quorum factor  --> 1
+DEBUG:root:self.substrate_list = ['quorum factor']
+DEBUG:root:substrate = quorum factor
+DEBUG:root:------------------- fill_xml_interactions():  cdef= ECM
+DEBUG:root:--- live_phagocytosis_rate= {'ECM': '0', 'default': '0', 'pusher': '0.0', '': '0.0'}
+DEBUG:root:  key in live_phagocytosis_rate= ECM
+DEBUG:root:ECM  --> 0
+DEBUG:root:  key in live_phagocytosis_rate= default
+DEBUG:root:default  --> 0
+DEBUG:root:  key in live_phagocytosis_rate= pusher
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:  key in live_phagocytosis_rate= 
+DEBUG:root:--- attack_rate= {'ECM': '0', 'default': '0', 'pusher': '0.0', '': '0.0'}
+DEBUG:root:ECM  --> 0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:--- fusion_rate= {'ECM': '0', 'default': '0', 'pusher': '0.0', '': '0.0'}
+DEBUG:root:ECM  --> 0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:ECM  --> 0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:------------------- fill_xml_intracellular()
+DEBUG:root:------ ["intracellular"]: for ECM
+DEBUG:root:None
+DEBUG:root:
+
+DEBUG:root:------ ["custom_data"]: for ECM
+DEBUG:root:
+
+DEBUG:root:
+--- key in param_d.keys() = pusher
+DEBUG:root:matched! pusher
+DEBUG:root:--- cell_adhesion_affinity= {'ECM': '0.0', 'pusher': '1.0'}
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:pusher  --> 1.0
+DEBUG:root:
+
+ ====================> fill_xml_motility(): quorum factor = quorum factor 
+
+
+DEBUG:root:fill_xml_motility(): {'quorum factor': '0.0'}
+DEBUG:root:quorum factor  --> 0.0
+DEBUG:root:self.substrate_list = ['quorum factor']
+DEBUG:root:substrate = quorum factor
+DEBUG:root:------------------- fill_xml_interactions():  cdef= pusher
+DEBUG:root:--- live_phagocytosis_rate= {'ECM': '0.0', 'default': '0', 'pusher': '0.0'}
+DEBUG:root:  key in live_phagocytosis_rate= ECM
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:  key in live_phagocytosis_rate= default
+DEBUG:root:default  --> 0
+DEBUG:root:  key in live_phagocytosis_rate= pusher
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:--- attack_rate= {'ECM': '0.0', 'default': '0', 'pusher': '0.0'}
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:--- fusion_rate= {'ECM': '0.0', 'default': '0', 'pusher': '0.0'}
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:default  --> 0
+DEBUG:root:------------------- fill_xml_intracellular()
+DEBUG:root:------ ["intracellular"]: for pusher
+DEBUG:root:None
+DEBUG:root:
+
+DEBUG:root:------ ["custom_data"]: for pusher
+DEBUG:root:
+
+DEBUG:root:----------- end cell_def_tab.py: fill_xml(): ----------
+DEBUG:root:
+--------- user_params_tab.py:  fill_xml(): self.count = 125
+DEBUG:root:--------- found //user_parameters
+DEBUG:root:random_seed
+DEBUG:root:number_of_cells
+DEBUG:root:found 2
+DEBUG:root:
+  ---- apoptosis_phase_transition_cb: 
+DEBUG:root:apoptosis_phase_transition_cb: --> duration
+DEBUG:root:
+  ---- apoptosis_phase_transition_cb: 
+DEBUG:root:apoptosis: ------>> transition rate
+DEBUG:root:apoptosis_phase_transition_cb: NOT duration
+DEBUG:root:
+  ---- necrosis_phase_transition_cb: 
+DEBUG:root:necrosis_phase_transition_cb: --> duration
+DEBUG:root:
+  ---- necrosis_phase_transition_cb: 
+DEBUG:root:necrosis: ------>>transition rate
+DEBUG:root:necrosis_phase_transition_cb: NOT duration
+DEBUG:root:key 0= ECM
+DEBUG:root:keys 1= dict_keys(['ECM', 'pusher'])
+DEBUG:root:keys 2= dict_keys(['ECM', 'pusher'])
+DEBUG:root:
+----- update_motility_params():  cdname= pusher
+DEBUG:root:     setting motility_substrate_dropdown (for cdname= pusher ) = quorum factor
+DEBUG:root:     setting motility2_substrate_dropdown (for cdname= pusher ) = quorum factor
+DEBUG:root:    chemotactic_sensitivity= {'quorum factor': '0.0'}
+DEBUG:root:new val = 0.0
+DEBUG:root:----- chemo_sensitivity_changed() = 0.0
+DEBUG:root:----- chemo_sensitivity_changed(): subname = quorum factor
+DEBUG:root:     chemotactic_sensitivity (dict)= {'quorum factor': '0.0'}
+DEBUG:root:----- leave update_motility_params()
+
+DEBUG:root:update_secretion_params(): cdname = pusher
+DEBUG:root:update_secretion_params(): self.current_secretion_substrate = quorum factor
+DEBUG:root:{'quorum factor': {'secretion_rate': '0.0', 'secretion_target': '1.0', 'uptake_rate': '0.0', 'net_export_rate': '0.0'}}
+DEBUG:root:
+  ---- apoptosis_phase_transition_cb: 
+DEBUG:root:apoptosis_phase_transition_cb: NOT duration
+DEBUG:root:
+  ---- apoptosis_phase_transition_cb: 
+DEBUG:root:apoptosis: ------>> duration
+DEBUG:root:apoptosis_phase_transition_cb: --> duration
+DEBUG:root:
+  ---- necrosis_phase_transition_cb: 
+DEBUG:root:necrosis_phase_transition_cb: NOT duration
+DEBUG:root:
+  ---- necrosis_phase_transition_cb: 
+DEBUG:root:necrosis: ------>>duration
+DEBUG:root:necrosis_phase_transition_cb: --> duration
+DEBUG:root:key 0= ECM
+DEBUG:root:keys 1= dict_keys(['ECM', 'pusher'])
+DEBUG:root:keys 2= dict_keys(['ECM', 'pusher'])
+DEBUG:root:
+----- update_motility_params():  cdname= ECM
+DEBUG:root:     setting motility_substrate_dropdown (for cdname= ECM ) = quorum factor
+DEBUG:root:     setting motility2_substrate_dropdown (for cdname= ECM ) = quorum factor
+DEBUG:root:    chemotactic_sensitivity= {'quorum factor': '1'}
+DEBUG:root:new val = 1
+DEBUG:root:----- chemo_sensitivity_changed() = 1
+DEBUG:root:----- chemo_sensitivity_changed(): subname = quorum factor
+DEBUG:root:     chemotactic_sensitivity (dict)= {'quorum factor': '1'}
+DEBUG:root:----- leave update_motility_params()
+
+DEBUG:root:update_secretion_params(): cdname = ECM
+DEBUG:root:update_secretion_params(): self.current_secretion_substrate = quorum factor
+DEBUG:root:{'quorum factor': {'secretion_rate': '0', 'secretion_target': '1', 'uptake_rate': '0', 'net_export_rate': '0'}}
+DEBUG:root:----------- microenv_tab.py: fill_xml(): ----------
+DEBUG:root:microenv_tab.py: fill_xml(): num subtrates = 1
+DEBUG:root:substrates_in_tree =['quorum factor']
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = substrate
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = gradients
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = track_in_agents
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = quorum factor
+DEBUG:root:matched! quorum factor
+DEBUG:root:
+
+----------- cell_def_tab.py: fill_xml(): ----------
+DEBUG:root:num cell defs = 2
+DEBUG:root:cdefs_in_tree =['ECM', 'pusher']
+DEBUG:root:
+--- key in param_d.keys() = ECM
+DEBUG:root:matched! ECM
+DEBUG:root:--- cell_adhesion_affinity= {'ECM': '1', 'pusher': '0'}
+DEBUG:root:ECM  --> 1
+DEBUG:root:pusher  --> 0
+DEBUG:root:
+
+ ====================> fill_xml_motility(): quorum factor = quorum factor 
+
+
+DEBUG:root:fill_xml_motility(): {'quorum factor': '1'}
+DEBUG:root:quorum factor  --> 1
+DEBUG:root:self.substrate_list = ['quorum factor']
+DEBUG:root:substrate = quorum factor
+DEBUG:root:------------------- fill_xml_interactions():  cdef= ECM
+DEBUG:root:--- live_phagocytosis_rate= {'ECM': '0', 'default': '0', 'pusher': '0.0', '': '0.0'}
+DEBUG:root:  key in live_phagocytosis_rate= ECM
+DEBUG:root:ECM  --> 0
+DEBUG:root:  key in live_phagocytosis_rate= default
+DEBUG:root:default  --> 0
+DEBUG:root:  key in live_phagocytosis_rate= pusher
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:  key in live_phagocytosis_rate= 
+DEBUG:root:--- attack_rate= {'ECM': '0', 'default': '0', 'pusher': '0.0', '': '0.0'}
+DEBUG:root:ECM  --> 0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:--- fusion_rate= {'ECM': '0', 'default': '0', 'pusher': '0.0', '': '0.0'}
+DEBUG:root:ECM  --> 0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:ECM  --> 0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:------------------- fill_xml_intracellular()
+DEBUG:root:------ ["intracellular"]: for ECM
+DEBUG:root:None
+DEBUG:root:
+
+DEBUG:root:------ ["custom_data"]: for ECM
+DEBUG:root:
+
+DEBUG:root:
+--- key in param_d.keys() = pusher
+DEBUG:root:matched! pusher
+DEBUG:root:--- cell_adhesion_affinity= {'ECM': '0.0', 'pusher': '1.0'}
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:pusher  --> 1.0
+DEBUG:root:
+
+ ====================> fill_xml_motility(): quorum factor = quorum factor 
+
+
+DEBUG:root:fill_xml_motility(): {'quorum factor': '0.0'}
+DEBUG:root:quorum factor  --> 0.0
+DEBUG:root:self.substrate_list = ['quorum factor']
+DEBUG:root:substrate = quorum factor
+DEBUG:root:------------------- fill_xml_interactions():  cdef= pusher
+DEBUG:root:--- live_phagocytosis_rate= {'ECM': '0.0', 'default': '0', 'pusher': '0.0'}
+DEBUG:root:  key in live_phagocytosis_rate= ECM
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:  key in live_phagocytosis_rate= default
+DEBUG:root:default  --> 0
+DEBUG:root:  key in live_phagocytosis_rate= pusher
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:--- attack_rate= {'ECM': '0.0', 'default': '0', 'pusher': '0.0'}
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:--- fusion_rate= {'ECM': '0.0', 'default': '0', 'pusher': '0.0'}
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:default  --> 0
+DEBUG:root:------------------- fill_xml_intracellular()
+DEBUG:root:------ ["intracellular"]: for pusher
+DEBUG:root:None
+DEBUG:root:
+
+DEBUG:root:------ ["custom_data"]: for pusher
+DEBUG:root:
+
+DEBUG:root:----------- end cell_def_tab.py: fill_xml(): ----------
+DEBUG:root:
+--------- user_params_tab.py:  fill_xml(): self.count = 125
+DEBUG:root:--------- found //user_parameters
+DEBUG:root:random_seed
+DEBUG:root:number_of_cells
+DEBUG:root:found 2
+DEBUG:root:
+  ---- apoptosis_phase_transition_cb: 
+DEBUG:root:apoptosis_phase_transition_cb: --> duration
+DEBUG:root:
+  ---- apoptosis_phase_transition_cb: 
+DEBUG:root:apoptosis: ------>> transition rate
+DEBUG:root:apoptosis_phase_transition_cb: NOT duration
+DEBUG:root:
+  ---- necrosis_phase_transition_cb: 
+DEBUG:root:necrosis_phase_transition_cb: --> duration
+DEBUG:root:
+  ---- necrosis_phase_transition_cb: 
+DEBUG:root:necrosis: ------>>transition rate
+DEBUG:root:necrosis_phase_transition_cb: NOT duration
+DEBUG:root:key 0= pusher
+DEBUG:root:keys 1= dict_keys(['ECM', 'pusher'])
+DEBUG:root:keys 2= dict_keys(['ECM', 'pusher'])
+DEBUG:root:
+----- update_motility_params():  cdname= pusher
+DEBUG:root:     setting motility_substrate_dropdown (for cdname= pusher ) = quorum factor
+DEBUG:root:     setting motility2_substrate_dropdown (for cdname= pusher ) = quorum factor
+DEBUG:root:    chemotactic_sensitivity= {'quorum factor': '0.0'}
+DEBUG:root:new val = 0.0
+DEBUG:root:----- chemo_sensitivity_changed() = 0.0
+DEBUG:root:----- chemo_sensitivity_changed(): subname = quorum factor
+DEBUG:root:     chemotactic_sensitivity (dict)= {'quorum factor': '0.0'}
+DEBUG:root:----- leave update_motility_params()
+
+DEBUG:root:update_secretion_params(): cdname = pusher
+DEBUG:root:update_secretion_params(): self.current_secretion_substrate = quorum factor
+DEBUG:root:{'quorum factor': {'secretion_rate': '0.0', 'secretion_target': '1.0', 'uptake_rate': '0.0', 'net_export_rate': '0.0'}}
+DEBUG:root:===========  run_model_cb():  ============
+DEBUG:root:run_tab.py:  doing: mkdir output
+DEBUG:root:
+ ========================== run_tab.py: update_xml_from_gui(): self.xml_root = <Element 'PhysiCell_settings' at 0x15e20c7c0>
+DEBUG:root:----------- microenv_tab.py: fill_xml(): ----------
+DEBUG:root:microenv_tab.py: fill_xml(): num subtrates = 1
+DEBUG:root:substrates_in_tree =['quorum factor']
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = substrate
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = gradients
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = track_in_agents
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = quorum factor
+DEBUG:root:matched! quorum factor
+DEBUG:root:
+
+----------- cell_def_tab.py: fill_xml(): ----------
+DEBUG:root:num cell defs = 2
+DEBUG:root:cdefs_in_tree =['ECM', 'pusher']
+DEBUG:root:
+--- key in param_d.keys() = ECM
+DEBUG:root:matched! ECM
+DEBUG:root:--- cell_adhesion_affinity= {'ECM': '1', 'pusher': '0'}
+DEBUG:root:ECM  --> 1
+DEBUG:root:pusher  --> 0
+DEBUG:root:
+
+ ====================> fill_xml_motility(): quorum factor = quorum factor 
+
+
+DEBUG:root:fill_xml_motility(): {'quorum factor': '1'}
+DEBUG:root:quorum factor  --> 1
+DEBUG:root:self.substrate_list = ['quorum factor']
+DEBUG:root:substrate = quorum factor
+DEBUG:root:------------------- fill_xml_interactions():  cdef= ECM
+DEBUG:root:--- live_phagocytosis_rate= {'ECM': '0', 'default': '0', 'pusher': '0.0', '': '0.0'}
+DEBUG:root:  key in live_phagocytosis_rate= ECM
+DEBUG:root:ECM  --> 0
+DEBUG:root:  key in live_phagocytosis_rate= default
+DEBUG:root:default  --> 0
+DEBUG:root:  key in live_phagocytosis_rate= pusher
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:  key in live_phagocytosis_rate= 
+DEBUG:root:--- attack_rate= {'ECM': '0', 'default': '0', 'pusher': '0.0', '': '0.0'}
+DEBUG:root:ECM  --> 0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:--- fusion_rate= {'ECM': '0', 'default': '0', 'pusher': '0.0', '': '0.0'}
+DEBUG:root:ECM  --> 0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:ECM  --> 0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:------------------- fill_xml_intracellular()
+DEBUG:root:------ ["intracellular"]: for ECM
+DEBUG:root:None
+DEBUG:root:
+
+DEBUG:root:------ ["custom_data"]: for ECM
+DEBUG:root:
+
+DEBUG:root:
+--- key in param_d.keys() = pusher
+DEBUG:root:matched! pusher
+DEBUG:root:--- cell_adhesion_affinity= {'ECM': '0.0', 'pusher': '1.0'}
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:pusher  --> 1.0
+DEBUG:root:
+
+ ====================> fill_xml_motility(): quorum factor = quorum factor 
+
+
+DEBUG:root:fill_xml_motility(): {'quorum factor': '0.0'}
+DEBUG:root:quorum factor  --> 0.0
+DEBUG:root:self.substrate_list = ['quorum factor']
+DEBUG:root:substrate = quorum factor
+DEBUG:root:------------------- fill_xml_interactions():  cdef= pusher
+DEBUG:root:--- live_phagocytosis_rate= {'ECM': '0.0', 'default': '0', 'pusher': '0.0'}
+DEBUG:root:  key in live_phagocytosis_rate= ECM
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:  key in live_phagocytosis_rate= default
+DEBUG:root:default  --> 0
+DEBUG:root:  key in live_phagocytosis_rate= pusher
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:--- attack_rate= {'ECM': '0.0', 'default': '0', 'pusher': '0.0'}
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:--- fusion_rate= {'ECM': '0.0', 'default': '0', 'pusher': '0.0'}
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:default  --> 0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:ECM  --> 0.0
+DEBUG:root:pusher  --> 0.0
+DEBUG:root:default  --> 0
+DEBUG:root:------------------- fill_xml_intracellular()
+DEBUG:root:------ ["intracellular"]: for pusher
+DEBUG:root:None
+DEBUG:root:
+
+DEBUG:root:------ ["custom_data"]: for pusher
+DEBUG:root:
+
+DEBUG:root:----------- end cell_def_tab.py: fill_xml(): ----------
+DEBUG:root:
+--------- user_params_tab.py:  fill_xml(): self.count = 125
+DEBUG:root:--------- found //user_parameters
+DEBUG:root:random_seed
+DEBUG:root:number_of_cells
+DEBUG:root:found 2

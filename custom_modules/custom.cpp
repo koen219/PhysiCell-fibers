@@ -127,13 +127,16 @@ void create_cell_types( void )
     pCD->functions.contact_function = fiber_contact_function; 
 
     pCD->phenotype.mechanics.maximum_number_of_attachments = 2; 
-    pCD->phenotype.mechanics.attachment_elastic_constant = 0.2; 
+    pCD->phenotype.mechanics.attachment_elastic_constant = 0.05; // 0.2; 
     pCD->phenotype.mechanics.attachment_rate = .1; 
     pCD->phenotype.mechanics.detachment_rate = 0; 
 
     pCD = find_cell_definition( "pusher"); 
     if( pCD )
-    { pCD->functions.update_migration_bias = rotating_migration_bias;}
+    {
+        pCD->functions.update_migration_bias = rotating_migration_bias;
+        pCD->functions.update_phenotype = pusher_phenotype_function; 
+    }
 
 	/*
 	   This builds the map of cell definitions and summarizes the setup. 
@@ -763,5 +766,13 @@ void rotating_migration_bias( Cell* pCell, Phenotype& phenotype , double dt )
     phenotype.motility.migration_bias_direction = { -y + radial*x , x + radial*y , 0} ; 
     normalize ( &(phenotype.motility.migration_bias_direction) );  
 
+    return; 
+}
+
+void pusher_phenotype_function( Cell* pCell, Phenotype& phenotype, double dt )
+{ 
+    if( get_single_signal( pCell , "time") > 400 )
+    { set_single_behavior( pCell ,"apoptosis" , 9e99 ); }
+    
     return; 
 }

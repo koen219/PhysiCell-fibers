@@ -103,6 +103,7 @@ void rotating_migration_bias( Cell* pCell, Phenotype& phenotype , double dt );
 std::vector< std::vector<double> > compute_angular_force_contributions( Cell* pCell , Phenotype& phenotype , double dt ); 
 
 
+void pusher_phenotype_function( Cell* pCell, Phenotype& phenotype, double dt ); 
 
 
 
