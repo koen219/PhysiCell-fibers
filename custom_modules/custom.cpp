@@ -805,3 +805,50 @@ void pusher_phenotype_function( Cell* pCell, Phenotype& phenotype, double dt )
     
     return; 
 }
+
+void bulk_model( double dt )
+{
+    // figure out where stuff is stored 
+    static int n_collagen   = microenvironment.find_density_index( "collagen");
+    static int n_crosslinks = microenvironment.find_density_index( "crosslinks"); 
+    static int n_stiffness  = microenvironment.find_density_index( "stiffness"); 
+
+    static double t_bulk_prev = 0; 
+    static double t_bulk = 0 ;
+    static double dt_bulk = parameters.doubles("dt_bulk"); //  0.1; 
+    static double t_bulk_next = t_bulk + dt_bulk; 
+
+    if( t_bulk >= t_bulk_next ) 
+    {
+        double dt_advance = t_bulk - t_bulk_prev ; 
+
+
+
+        // iterate through voxels 
+            // read values I need
+            // perform caucluations 
+            // write values 
+
+        for( int n=0 ; n < microenvironment.mesh.voxels.size() ; n++ )
+        {
+            std::vector<double> rho = microenvironment(n); 
+
+            double c = rho[ n_collagen ];
+            double CL = rho[ n_crosslinks ];
+            double s = rho[ n_stiffness ];
+
+            double dc = dt_advance * 0.01 * c * CL ; 
+            c -= dc; 
+            CL += dc; 
+
+            microenvironment(n)[ n_collagen ] = c; 
+
+        }
+
+        t_bulk_next = t_bulk + dt_bulk; 
+        t_bulk_prev = t_bulk; 
+
+    }
+
+    return; 
+}

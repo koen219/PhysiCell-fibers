@@ -344,5 +344,6 @@
     <user_parameters>
         <random_seed type="int" units="dimensionless" description="">0</random_seed>
         <number_of_cells type="int" units="none" description="initial number of cells (for each cell type)">0</number_of_cells>
+        <boolthing type="bool" units="" description="">true</boolthing>
     </user_parameters>
 </PhysiCell_settings>
